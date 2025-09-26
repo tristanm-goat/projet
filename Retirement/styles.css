@@ -1,0 +1,71 @@
+body {
+    font-family: "Helvetica", "Roboto", Arial, sans-serif;
+    background-color: rgb(195, 255, 205);
+}
+h1 {
+    color: rgb(255, 255, 255);
+    text-shadow:
+        -2px -2px 0 #000000,
+         2px -2px 0 #ff0000,
+        -2px  2px 0 #0bff0b,
+         2px  2px 0 #419aff;
+}
+.playfair-display1 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.banner-nav {
+    width: 100%;
+    background-color: rgb(12, 151, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+.banner-nav a {
+    font-family: "Playfair Display", serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-size: 1.1em;
+    transition: background 0.2s;
+}
+.banner-nav a:hover {
+    background-color: rgb(10, 116, 41);
+}
+.parallax {
+  /* The image used */
+  background-image: url("old1.png");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-container {
+    background-color: rgba(12, 151, 54);
+    padding: 50px 0;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    font-family: "Playfair Display", "Helvetica", "Roboto", Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+}
+.parallax2 {
+    background-image: url("old2.png");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
