@@ -6,65 +6,33 @@
 	<title>PHP Web Application</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/templatemo-style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 	<!-- Mapbox CSS -->
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+
 	<style>
 		#map { width: 100%; height: 400px; margin-top: 20px; }
 	</style>
 </head>
 <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">
-      <div class="container-fluid">
-        <div class="row tm-brand-row">
-          <div class="col-lg-4 col-11">
-            <div class="tm-brand-container tm-bg-white-transparent" style="outline: 4px solid #3aaed8; border-radius: 2px;">
-              <i class="fas fa-2x fa-pen tm-brand-icon"></i>
-              
-              <div class="tm-brand-texts">
-              <h1 class="text-uppercase tm-brand-name">Lifemap</h1>
-              <p class="small">Plateforme pour résidences pour aînés</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 col-1">
-            <div class="tm-nav">
-                <nav class="navbar navbar-expand-lg navbar-light tm-bg-white-transparent tm-navbar" style="outline: 2px solid #3aaed8; border-radius: 4px;">
-                <button class="navbar-toggler" type="button"
-                  data-toggle="collapse" data-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li id="facility-header-btn" class="nav-item active">
-                      <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="facilityfinder.php">Facility</a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="tm-nav-link-highlight"></div>
-                      <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>
+  <div class="header-container">
+  <header class="main-header">
+    <div class="logo-section">
+      <img src="img/logo.png" alt="LifeMap Logo" class="company-logo" />
+      <span class="company-name" >LifeMap</span>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="facilityfinder.php" class="active">Facility</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>	
+</div>
+
 	<main>
 		<form id="location-form" method="post">
 			<label for="location">Enter your location:</label>
@@ -84,7 +52,8 @@
 	</footer>
 	<!-- Mapbox JS -->
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-	<script>
+
+<script>
 const mapboxToken = "pk.eyJ1IjoibWNocmUwOTEiLCJhIjoiY21mcXhkZDAxMDNrczJycTQ3bnlweWsyMiJ9.EA6nnyDT-4cqAWQLzjtKVQ";
 const tilesetId = "mchre091.9oel5st2";
 let map, userMarker;
@@ -96,34 +65,11 @@ function loadGeolocation() {
 			const lon = position.coords.longitude;
 			document.getElementById("location").value = lat + ", " + lon;
 			document.getElementById("current-location").innerHTML = "Latitude: " + lat + ", Longitude: " + lon;
-
-			// Initialize Mapbox map
-			mapboxgl.accessToken = mapboxToken;
-			map = new mapboxgl.Map({
-				container: 'map',
-				style: 'mapbox://styles/mapbox/streets-v11',
-				center: [lon, lat],
-				zoom: 12
-			});
-
-			// Add custom tileset as a layer
-			map.on('load', function () {
-				map.addSource('custom-tileset', {
-					'type': 'vector',
-					'url': 'mapbox://' + tilesetId
-				});
-			});
-
-			// Add user location marker
-			userMarker = new mapboxgl.Marker({ color: 'red' })
-				.setLngLat([lon, lat])
-				.addTo(map);
 		});
 	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	// Automatically load geolocation on page load
 	loadGeolocation();
 
 	document.getElementById("location-form").addEventListener("submit", function(e) {
@@ -137,11 +83,50 @@ document.addEventListener("DOMContentLoaded", function() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				document.getElementById("nearest-facility").innerHTML = xhr.responseText;
+
+				// Extract coordinates from the response
+				const yMatch = xhr.responseText.match(/let y_location = '([^']+)'/);
+				const xMatch = xhr.responseText.match(/let x_location = '([^']+)'/);
+				if (yMatch && xMatch) {
+					const lat = yMatch[1];
+					const lon = xMatch[1];
+					initializeMap(lat, lon); // Pass coordinates to initializeMap
+					addFacilityMarker(lat, lon);
+				}
 			}
 		};
 		xhr.send("location-y=" + encodeURIComponent(ylocation) + "&location-x=" + encodeURIComponent(xlocation));
 	});
 });
+
+// Update initializeMap to accept coordinates
+function initializeMap(lat, lon) {
+	mapboxgl.accessToken = mapboxToken;
+	map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: [parseFloat(lon), parseFloat(lat)], // Center on facility
+		zoom: 13
+	});
+	// Optionally, add user location marker as before
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			const userLocation = [position.coords.longitude, position.coords.latitude];
+			userMarker = new mapboxgl.Marker({ color: 'blue' })
+				.setLngLat(userLocation)
+				.setPopup(new mapboxgl.Popup().setText("You are here"))
+				.addTo(map);
+		});
+	}
+}
+
+function addFacilityMarker(lat, lon) {
+    if (!map) return;
+    new mapboxgl.Marker({ color: 'red' })
+        .setLngLat([parseFloat(lon), parseFloat(lat)])
+        .setPopup(new mapboxgl.Popup().setText("Nearest Facility"))
+        .addTo(map);
+}
 </script>
 </body>
 </html>

@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\facilityfinder.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\index.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\find-nearest.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\find-nearest.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\templatemo-style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\css\\templatemo-style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,8 +41,56 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "templatemo-style.css",
+              "DocumentMoniker": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\templatemo-style.css",
+              "RelativeDocumentMoniker": "Retirement\\css\\templatemo-style.css",
+              "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\templatemo-style.css",
+              "RelativeToolTip": "Retirement\\css\\templatemo-style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-27T18:05:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.html",
+              "DocumentMoniker": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html",
+              "RelativeDocumentMoniker": "Retirement\\index.html",
+              "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html",
+              "RelativeToolTip": "Retirement\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-27T18:04:24.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "styles.css",
+              "DocumentMoniker": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\styles.css",
+              "RelativeDocumentMoniker": "Retirement\\css\\styles.css",
+              "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\css\\styles.css",
+              "RelativeToolTip": "Retirement\\css\\styles.css",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAKoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-27T17:48:04.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "find-nearest.php",
+              "DocumentMoniker": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\find-nearest.php",
+              "RelativeDocumentMoniker": "Retirement\\find-nearest.php",
+              "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\find-nearest.php",
+              "RelativeToolTip": "Retirement\\find-nearest.php",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwDYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-09-27T18:07:55.781Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,22 +100,10 @@
               "RelativeDocumentMoniker": "Retirement\\facilityfinder.php",
               "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\facilityfinder.php",
               "RelativeToolTip": "Retirement\\facilityfinder.php",
-              "ViewState": "AgIAAHkAAAAAAAAAAADwv3oAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAjwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
               "WhenOpened": "2025-09-27T16:16:49.497Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html",
-              "RelativeDocumentMoniker": "Retirement\\index.html",
-              "ToolTip": "G:\\Software\\xampp-1\\htdocs\\projet\\Retirement\\index.html",
-              "RelativeToolTip": "Retirement\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-27T16:16:40.085Z"
             }
           ]
         }

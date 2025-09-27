@@ -48,9 +48,12 @@ if ($row = $result->fetch_assoc()) {
     echo "Longitude: " . $row['X'] . "<br>";
     echo "Distance: " . round($row['distance'], 2) . " km<br>";
     echo "Address: " . $row['ADDRESS_LINE_1'];
-    echo "<script>let y_location = '$ylocation2';</script><br>";
-    echo "<script>let x_location = '$xlocation2';</script>";
-    echo "<script> addFacilityMarker(y_location, x_location);</script>";
+    echo "<script>
+        let y_location = '$ylocation2';
+        let x_location = '$xlocation2';
+        initializeMap(y_location, x_location);
+        addFacilityMarker(y_location, x_location);
+    </script>";
 } else {
     echo "No facilities found.";
 }

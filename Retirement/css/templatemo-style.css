@@ -61,9 +61,10 @@ small {
 }
 
 .tm-brand-row {
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 28px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 28px;
+    background-color: #f5d5ed; /* White */
 }
 
 .tm-brand-container {
