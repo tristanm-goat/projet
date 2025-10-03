@@ -42,7 +42,7 @@ a:hover {
 }
 
 .container-fluid {
-  max-width: 1310px;
+  max-width: 2000;
 }
 
 .small,
@@ -65,6 +65,7 @@ small {
     padding-top: 20px;
     padding-bottom: 28px;
     background-color: #f5d5ed; /* White */
+    width: 100%;
 }
 
 .tm-brand-container {

@@ -19,42 +19,67 @@
 <body>
 
 <header>
+	<!-- Logo Section -->
     <div class="logo-section">
-      <img src="img/logo-png.png" alt="LifeMap Logo" class="company-logo" />
+      <img src="img/logo-png.png"  alt="LifeMap Logo" class="company-logo" />
       <span class="company-name" >Life</span><span class="company-name2">Map</span>
     </div>
+
+	<!-- Navigation Menu -->
     <div class="main-nav">
       <ul>
-        <li><a href="index.html">&#x1F3E0</a>
-			<a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="facilityfinder.php" class="active">Facility</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li> <div class="highlight">---------</div>
+			<a href="index.html">Home</a>
+		</li>
+        <li><div class="highlight">---------</div><a href="about.html">About</a></li>
+        <li><div class="highlight">---------</div><a href="services.html">Services</a></li>
+        <li class="active"><div class="highlight">---------</div><a href="facilityfinder.php">Facility</a></li>
+        <li><div class="highlight">---------</div><a href="contact.html">Contact</a></li>
+		<li><div class="highlight">---------</div><a href="contact.html">Login</a></li>
       </ul>
     </div>
   </header>	
+  <!-- Separator Black Line -->
   	<div class="seperator-line"></div>
+
+
+<!-- Main Content Section -->
 	<main>
 		<form id="location-form" method="post">
-			<label for="location">Enter your location:</label>
+			<label for="location">Address</label>
 			<input type="text" id="location" name="location" required>
-			<input type="submit" value="Find Facility">
-			<br>
-		</form>
-		<h2>Current Location</h2>
-		<p id="current-location">Fetching location...</p><br>
-		<p id="nearest-facility-title">Nearest Facility Information:</p>
-		<div id="nearest-facility"></div>
-		<div id="map"></div>
-	</main>
+			<input type="submit" value="Search" id="search-button">
 
+			<label for="location">Filter</label>
+			<input type="text" id="location" name="location" required>
+			<input type="submit" value="Search" id="search-button">
+		</form>
+		<br>
+		<div class="seperator-line"></div>
+<div class="facility-content">
+
+
+	<!-- Table Display Section -->
+	<div class="table-container">
+		<h1>Hello</h1>
+		<div id="nearest-facility"></div>
+	</div>
+	<!-- Map Display Section -->
+	<div class="map-container">
+		<h1>Hello</h1>
+		<div id="map"></div>
+	</div>
+</div>
+</main>
+	<!-- Footer Section -->
 	<footer>
+		<div class="seperator-line"></div>
 		<p>&copy; Group Retirement Home</p>
 	</footer>
-	<!-- Mapbox JS -->
-	<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 
+
+<!-- Javascript Section -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <script>
 const mapboxToken = "pk.eyJ1IjoibWNocmUwOTEiLCJhIjoiY21mcXhkZDAxMDNrczJycTQ3bnlweWsyMiJ9.EA6nnyDT-4cqAWQLzjtKVQ";
 const tilesetId = "mchre091.9oel5st2";
@@ -99,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		xhr.send("location-y=" + encodeURIComponent(ylocation) + "&location-x=" + encodeURIComponent(xlocation));
 	});
-};
+});
 
 // Update initializeMap to accept coordinates
 function initializeMap(lat, lon) {
