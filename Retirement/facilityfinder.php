@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PHP Web Application</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
 	<!-- Mapbox CSS -->
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
@@ -15,24 +17,24 @@
 	</style>
 </head>
 <body>
-  <div class="header-container">
-  <header class="main-header">
+
+<header>
     <div class="logo-section">
-      <img src="img/logo.png" alt="LifeMap Logo" class="company-logo" />
-      <span class="company-name" >LifeMap</span>
+      <img src="img/logo-png.png" alt="LifeMap Logo" class="company-logo" />
+      <span class="company-name" >Life</span><span class="company-name2">Map</span>
     </div>
-    <nav class="main-nav">
+    <div class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">&#x1F3E0</a>
+			<a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="facilityfinder.php" class="active">Facility</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </header>	
-</div>
-
+  	<div class="seperator-line"></div>
 	<main>
 		<form id="location-form" method="post">
 			<label for="location">Enter your location:</label>
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		xhr.send("location-y=" + encodeURIComponent(ylocation) + "&location-x=" + encodeURIComponent(xlocation));
 	});
-});
+};
 
 // Update initializeMap to accept coordinates
 function initializeMap(lat, lon) {

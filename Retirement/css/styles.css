@@ -1,197 +1,119 @@
-/* styles.css - Custom styles for facilityfinder.php with earthy hues */
-
 /* General body and layout */
 body {
-    font-family: Arial, Verdana, sans-serif;
-    font-size: 14px;
-    background-color: #f4f1ee; /* warm light beige */
-    color: #3e2c23; /* deep brown */
+    font-family: 'Lexend', Arial, sans-serif;
+    font-size: 20px;
+    background-color: #f4f1ee;
+    color: #3aaed8;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
-/* Parallax window container */
-.parallax-window {
-    min-height: 300px;
-    background: transparent;
-}
-
-/* Brand container */
-.tm-brand-container {
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(120, 72, 48, 0.08);
-}
-
-/* Navigation bar */
-.tm-nav .navbar {
-    font-weight: 600;
-}
-
-.tm-nav-link-highlight {
-    height: 3px;
-    background: #a67c52; /* earthy brown */
-    margin-bottom: 2px;
-    border-radius: 2px;
-}
-
-.nav-link.active,
-.nav-link:focus,
-.nav-link:hover {
-    color: #a67c52 !important;
-    background: #e9e3d0;
-    border-radius: 4px;
-}
-
-/* Main content */
-main {
-    background: #fffdf6; /* off-white with warmth */
-    border-radius: 8px;
-    padding: 32px 24px;
-    margin: 32px auto;
-    max-width: 700px;
-    box-shadow: 0 2px 12px rgba(120, 72, 48, 0.07);
-}
-
-/* Form styles */
-#location-form {
-    margin-bottom: 24px;
-}
-
-#location-form label {
-    font-weight: 600;
-    margin-right: 8px;
-}
-
-#location-form input[type="text"] {
-    padding: 6px 10px;
-    border: 1px solid #bfa980; /* muted tan */
-    border-radius: 4px;
-    margin-right: 8px;
-    width: 220px;
-    background: #f7f3ed;
-    color: #3e2c23;
-}
-
-#location-form input[type="submit"] {
-    background: #7c6f57; /* earthy olive */
-    color: #fff;
-    border: none;
-    padding: 7px 18px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-#location-form input[type="submit"]:hover {
-    background: #5c4a2f; /* darker earthy brown */
-}
-
-/* Section titles */
-h2 {
-    color: #7c6f57;
-    margin-top: 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-/* Info and map */
-#current-location {
-    font-size: 1rem;
-    color: #6b5e4b;
-}
-
-#nearest-facility-title {
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-#nearest-facility {
-    background: #e9e3d0;
-    border-left: 4px solid #a67c52;
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    color: #3e2c23;
-}
-
-/* Map container */
-#map {
-    width: 100%;
-    height: 400px;
-    border-radius: 8px;
-    border: 1px solid #bfa980;
-    margin-top: 20px;
-    box-shadow: 0 1px 6px rgba(120, 72, 48, 0.09);
-}
-
-/* Footer */
 footer {
+    background-color: #3aaed8;
+    color: #f4f1ee;
     text-align: center;
-    padding: 18px 0;
-    background: #e9e3d0;
-    color: #7c6f57;
-    font-weight: 600;
-    margin-top: 40px;
-    border-top: 1px solid #bfa980;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-/* Header styles */
-.header-container {
-    background: #e9e3d0;
-    border-bottom: 1px solid #bfa980;
-    padding: 0;
-    margin-bottom: 32px;
-}
-
-.main-header {
+header {
+    background-image: linear-gradient(to bottom, #C09ADB  , #e6e6fa);
+    padding: 20px 0px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 16px 24px;
+    font-color: #3aaed8;
+}
+
+/* Navigation bar list */
+ul {
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    margin-bottom: 60px; 
+    display: block;
+    text-align: center; 
 }
 
 .logo-section {
+    justify-content: center;
+    text-align: center;
+    max-width: auto;
+    height: auto;
+    display: flex; 
+}
+
+/* Navigation Bar*/
+.main-nav {
+    margin-right: 50px;
+    background-color: #b3e6fc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    border:  1px, solid black;
+    border-radius: 10px;
+}
+li {
+    padding: 0px 10px;
+}
+
+li:hover {
+    background-color: #f4f1ee;
+    color: #3aaed8;
+    font-weight: bold;
+    border:  1px, solid blue;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.company-name {
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: #8B0000;
+    text-align: left;
     display: flex;
     align-items: center;
+    background-image; radial-gradient(circle, #3aaed8, #b3e6fc);
+}
+
+.company-name2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #3aaed8;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    background-image; radial-gradient(circle, #3aaed8, #b3e6fc);
 }
 
 .company-logo {
-    height: 48px;
-    width: 48px;
-    margin-right: 14px;
+    height: 8rem;
+    width: 8rem;
+    margin-left: 40px;
 }
 
-.company-name {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #3aaed8;
-    letter-spacing: 1px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #3e2c23;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 6px 14px;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    background: #a67c52;
-    color: #fff;
+.seperator-line {
+    border-top: 5px solid black;
+    width: 100%;
 }
