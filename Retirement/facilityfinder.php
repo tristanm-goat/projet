@@ -34,12 +34,12 @@
         <li><div class="highlight">---------</div><a href="about.html">About</a></li>
         <li><div class="highlight">---------</div><a href="services.html">Services</a></li>
         <li class="active"><div class="highlight">---------</div><a href="facilityfinder.php">Facility</a></li>
-        <li><div class="highlight">---------</div><a href="contact.html">Contact</a></li>
-		<li><div class="highlight">---------</div><a href="contact.html">Login</a></li>
+        <li><div class="highlight">---------</div><a href="contact.php">Contact</a></li>
+		<li><div class="highlight">---------</div><a href="contact.php">Login</a></li>
       </ul>
     </div>
   </header>	
-  <!-- Separator Black Line -->
+<!-- Separator Black Line -->
   	<div class="seperator-line"></div>
 
 

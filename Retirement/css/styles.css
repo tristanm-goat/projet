@@ -176,3 +176,14 @@ input[type="Text"] {
   text-align: center; 
   background-color: #f0f0f0;
 }
+
+/* Login Styles */
+.login-container {
+    padding-left: 200px;
+}
+
+table {
+    margin: 0 auto;
+    border-color: black;
+    border-
+}

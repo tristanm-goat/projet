@@ -15,10 +15,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\index.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\projet\\Retirement\\css\\templatemo-style.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\css\\templatemo-style.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\projet\\Retirement\\login.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Retirement\\login.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
@@ -30,23 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "login.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\projet\\Retirement\\login.php",
               "RelativeDocumentMoniker": "Retirement\\login.php",
@@ -54,8 +38,7 @@
               "RelativeToolTip": "Retirement\\login.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-03T17:49:45.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T17:49:45.307Z"
             },
             {
               "$type": "Document",
@@ -65,23 +48,8 @@
               "RelativeDocumentMoniker": "Retirement\\index.html",
               "ToolTip": "C:\\xampp\\htdocs\\projet\\Retirement\\index.html",
               "RelativeToolTip": "Retirement\\index.html",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-03T17:04:33.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "templatemo-style.css",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\projet\\Retirement\\css\\templatemo-style.css",
-              "RelativeDocumentMoniker": "Retirement\\css\\templatemo-style.css",
-              "ToolTip": "C:\\xampp\\htdocs\\projet\\Retirement\\css\\templatemo-style.css",
-              "RelativeToolTip": "Retirement\\css\\templatemo-style.css",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAgwI0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-03T17:04:29.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T17:04:33.256Z"
             },
             {
               "$type": "Document",
@@ -91,7 +59,7 @@
               "RelativeDocumentMoniker": "Retirement\\facilityfinder.php",
               "ToolTip": "C:\\xampp\\htdocs\\projet\\Retirement\\facilityfinder.php",
               "RelativeToolTip": "Retirement\\facilityfinder.php",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-09-27T16:16:49.497Z",
               "EditorCaption": ""
@@ -106,8 +74,23 @@
               "RelativeToolTip": "Retirement\\css\\styles.css",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAK8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-03T12:46:36.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T12:46:36.735Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
