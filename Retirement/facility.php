@@ -60,12 +60,11 @@
 
 	<!-- Table Display Section -->
 	<div class="table-container">
-		<h1>Hello</h1>
+		<h1>List</h1>
 		<div id="nearest-facility"></div>
 	</div>
 	<!-- Map Display Section -->
 	<div class="map-container">
-		<h1>Hello</h1>
 		<div id="map"></div>
 	</div>
 </div>
@@ -79,6 +78,7 @@
 
 <!-- Javascript Section -->
 <script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWNocmUwOTEiLCJhIjoiY21mcXhkZDAxMDNrczJycTQ3bnlweWsyMiJ9.EA6nnyDT-4cqAWQLzjtKVQ';
   // Check if user is logged in
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {
@@ -87,15 +87,23 @@
 	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
   } else {;
   }
-</script>
 
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-<script>
-const mapboxToken = "pk.eyJ1IjoibWNocmUwOTEiLCJhIjoiY21mcXhkZDAxMDNrczJycTQ3bnlweWsyMiJ9.EA6nnyDT-4cqAWQLzjtKVQ";
-const tilesetId = "mchre091.9oel5st2";
-let map, userMarker;
+  // Initialize Mapbox
+  document.addEventListener("DOMContentLoaded", function() {
+	initializeMap();
+	 });
 
-function loadGeolocation() {
+  function initializeMap(lat, lon) {
+	loadGeolocation();
+	  map = new mapboxgl.Map({
+		  container: 'map',
+		  style: 'mapbox://styles/mapbox/streets-v11',
+		  center: [lon, lat],
+		  zoom: 12
+	  });
+	  map.addControl(new mapboxgl.NavigationControl());
+  }
+  function loadGeolocation() {
 	if ("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			const lat = position.coords.latitude;
@@ -105,65 +113,7 @@ function loadGeolocation() {
 		});
 	}
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-	loadGeolocation();
-
-	document.getElementById("location-form").addEventListener("submit", function(e) {
-		e.preventDefault();
-		const location = document.getElementById("location").value.split(",");
-		const ylocation = location[0].trim();
-		const xlocation = location[1].trim();
-		const xhr = new XMLHttpRequest();
-		xhr.open("POST", "find-nearest.php", true);
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				document.getElementById("nearest-facility").innerHTML = xhr.responseText;
-
-				// Extract coordinates from the response
-				const yMatch = xhr.responseText.match(/let y_location = '([^']+)'/);
-				const xMatch = xhr.responseText.match(/let x_location = '([^']+)'/);
-				if (yMatch && xMatch) {
-					const lat = yMatch[1];
-					const lon = xMatch[1];
-					initializeMap(lat, lon); // Pass coordinates to initializeMap
-					addFacilityMarker(lat, lon);
-				}
-			}
-		};
-		xhr.send("location-y=" + encodeURIComponent(ylocation) + "&location-x=" + encodeURIComponent(xlocation));
-	});
-});
-
-// Update initializeMap to accept coordinates
-function initializeMap(lat, lon) {
-	mapboxgl.accessToken = mapboxToken;
-	map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [parseFloat(lon), parseFloat(lat)], // Center on facility
-		zoom: 13
-	});
-	//add user location marker as before
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			const userLocation = [position.coords.longitude, position.coords.latitude];
-			userMarker = new mapboxgl.Marker({ color: 'blue' })
-				.setLngLat(userLocation)
-				.setPopup(new mapboxgl.Popup().setText("You are here"))
-				.addTo(map);
-		});
-	}
-}
-
-function addFacilityMarker(lat, lon) {
-    if (!map) return;
-    new mapboxgl.Marker({ color: 'red' })
-        .setLngLat([parseFloat(lon), parseFloat(lat)])
-        .setPopup(new mapboxgl.Popup().setText("Nearest Facility"))
-        .addTo(map);
-}
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 </script>
 </body>
 </html>

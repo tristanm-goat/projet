@@ -49,7 +49,7 @@
       <h2>Welcome to Your Account Portal</h2>
       <p>This is a placeholder for the account portal content.</p>
       <p>You can manage your profile, view services, and access other features here.</p>
-      <button type="logout" onclick="window.location.href='login.php'">Log Out</button>
+      <button type="logout" id="logout">Log Out</button>
       </div>
 </div>
   <!-- Footer Section -->
@@ -65,5 +65,10 @@
   } else {
       window.location.href = 'login.php';
   }
+
+  document.getElementById("logout").addEventListener("click", function(event) {
+      localStorage.setItem("userloggedin", false);
+      window.location.href = 'login.php';
+  });
 </script>
 </html>
