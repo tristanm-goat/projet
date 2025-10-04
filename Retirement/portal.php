@@ -26,7 +26,8 @@
         <li><div class="highlight">&#x23AF</div><a href="services.php">Services</a></li>
         <li><div class="highlight">&#x23AF</div><a href="facility.php">Facility</a></li>
         <li><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
-		    <li class="active"><div class="highlight">&#x23AF</div><a href="login.php">Account</a></li>
+		    <li class="active"><div class="highlight">&#x23AF</div><a href="portal.php">Account</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="likes.php">Likes</a></li>
       </ul>
     </div>
   </header>
@@ -56,4 +57,13 @@
     <p>&copy; 2024 LifeMap. All rights reserved.</p> 
   </footer>
 </body>
+
+<script>
+  let userisloggedin = localStorage.getItem("userloggedin");
+  if (userisloggedin == "true") {
+      console.log("Access granted to portal.");
+  } else {
+      window.location.href = 'login.php';
+  }
+</script>
 </html>

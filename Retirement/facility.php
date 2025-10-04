@@ -28,14 +28,13 @@
 	<!-- Navigation Menu -->
     <div class="main-nav">
       <ul>
-        <li> <div class="highlight">&#x23AF</div>
-			<a href="index.html">Home</a>
-		</li>
-        <li><div class="highlight">&#x23AF</div><a href="about.html">About</a></li>
-        <li><div class="highlight">&#x23AF</div><a href="services.html">Services</a></li>
-        <li class="active"><div class="highlight">&#x23AF</div><a href="facilityfinder.php">Facility</a></li>
+        <li> <div class="highlight">&#x23AF</div><a href="index.php">Home</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="about.php">About</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="services.php">Services</a></li>
+        <li class="active"><div class="highlight">&#x23AF</div><a href="facility.php">Facility</a></li>
         <li><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
-		<li><div class="highlight">&#x23AF</div><a href="login.php">Login</a></li>
+		<li><div class="highlight">&#x23AF</div><a id="login" href="login.php">Login</a></li>
+		<li><a id="likes"></a></li>
       </ul>
     </div>
   </header>	
@@ -79,6 +78,17 @@
 
 
 <!-- Javascript Section -->
+<script>
+  // Check if user is logged in
+  let userisloggedin = localStorage.getItem("userloggedin");
+  if (userisloggedin == "true") {
+	  document.getElementById("login").innerText = "Account";
+	  document.getElementById("login").href = "portal.php";
+	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
+  } else {;
+  }
+</script>
+
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 <script>
 const mapboxToken = "pk.eyJ1IjoibWNocmUwOTEiLCJhIjoiY21mcXhkZDAxMDNrczJycTQ3bnlweWsyMiJ9.EA6nnyDT-4cqAWQLzjtKVQ";
@@ -135,7 +145,7 @@ function initializeMap(lat, lon) {
 		center: [parseFloat(lon), parseFloat(lat)], // Center on facility
 		zoom: 13
 	});
-	// Optionally, add user location marker as before
+	//add user location marker as before
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			const userLocation = [position.coords.longitude, position.coords.latitude];
