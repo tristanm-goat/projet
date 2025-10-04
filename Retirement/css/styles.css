@@ -22,8 +22,31 @@ header {
     background-image: linear-gradient(to bottom, #e6e6fa, #e6e6fa);
     padding: 10px 20px;
     display: flex;
-    font-color: #3aaed8;
+    color: #3aaed8;
+    justify-content: center;
 }
+
+/*Home Page CSS*/
+.docker {
+    display: flex;
+    justify-content: center;
+}
+
+.docker-1 {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    margin: 20px;
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    }
+
+
 
 /* Navigation bar list */
 ul {
@@ -43,10 +66,7 @@ main {
     padding-right: 200px;
     padding-top: 20px;
     margin-bottom: 60px;
-    max-width: 1500px;
 }
-
-
 
 /* Navigation Bar*/
 .main-nav {
@@ -85,7 +105,6 @@ li.active .highlight{
     text-align: center;
     display: flex;
     align-items: center;
-    padding-left: 300px;
 }
 
 .company-name {
@@ -96,7 +115,6 @@ li.active .highlight{
     text-align: left;
     display: flex;
     align-items: center;
-    background-image; radial-gradient(circle, #3aaed8, #b3e6fc);
 }
 
 .company-name2 {
@@ -106,15 +124,12 @@ li.active .highlight{
     text-align: left;
     display: flex;
     align-items: center;
-    background-image; radial-gradient(circle, #3aaed8, #b3e6fc);
 }
 
 .company-logo {
     height: 5rem;
     width: 5rem;
-    text-align: center; 
 }
-
 
 /* Section Headings */
 .seperator-line {
@@ -131,23 +146,8 @@ label {
     color: #3aaed8;
 }
 
-input[type="Submit"] {
-    background-color: #3aaed8;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-input[type="Text"] {
-    color: #3aaed8;
-    width: 300px;
+button[type="Submit"], button[type="signin"], button[type="signup"] {
+    background-color: lightblue;
     font-weight: bold;  
     border: none;
     padding: 10px 20px;
@@ -155,9 +155,27 @@ input[type="Text"] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
+}
+
+button[type="signup"] {
+    background-color: lightgray;
+}
+
+input[type="password"], input[type="text"], input[type="number"], input[type="email"] {
+    color: lightslategray;
+    width: 300px;
+    font-weight: bold;  
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
 }
 
 /* Facility Content (Encompasses both map and data table)*/
@@ -177,13 +195,66 @@ input[type="Text"] {
   background-color: #f0f0f0;
 }
 
+
+
 /* Login Styles */
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 150px;
+}
+
 .login-container {
-    padding-left: 200px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 table {
     margin: 0 auto;
     border-color: black;
-    border-
+}
+
+
+/* Account Portal */
+.account-portal-body {
+    margin-top: 15px;
+    display: flex;
+}
+
+.account-portal-settings {
+    justify-content: left;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.account-portal-container {
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 20px;
+    width: 100%;
+}
+
+ul.settings-list {
+    margin: 10px 0;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+
+li.settings {
+    margin: 10px 0;
+    text-align: left;
 }

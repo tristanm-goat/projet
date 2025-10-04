@@ -28,14 +28,14 @@
 	<!-- Navigation Menu -->
     <div class="main-nav">
       <ul>
-        <li> <div class="highlight">---------</div>
+        <li> <div class="highlight">&#x23AF</div>
 			<a href="index.html">Home</a>
 		</li>
-        <li><div class="highlight">---------</div><a href="about.html">About</a></li>
-        <li><div class="highlight">---------</div><a href="services.html">Services</a></li>
-        <li class="active"><div class="highlight">---------</div><a href="facilityfinder.php">Facility</a></li>
-        <li><div class="highlight">---------</div><a href="contact.php">Contact</a></li>
-		<li><div class="highlight">---------</div><a href="contact.php">Login</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="about.html">About</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="services.html">Services</a></li>
+        <li class="active"><div class="highlight">&#x23AF</div><a href="facilityfinder.php">Facility</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
+		<li><div class="highlight">&#x23AF</div><a href="login.php">Login</a></li>
       </ul>
     </div>
   </header>	

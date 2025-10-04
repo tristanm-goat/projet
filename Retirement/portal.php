@@ -25,20 +25,32 @@
         <li><div class="highlight">&#x23AF</div><a href="about.php">About</a></li>
         <li><div class="highlight">&#x23AF</div><a href="services.php">Services</a></li>
         <li><div class="highlight">&#x23AF</div><a href="facility.php">Facility</a></li>
-        <li class="active"><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
-		    <li><div class="highlight">&#x23AF</div><a href="login.php">Login</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
+		    <li class="active"><div class="highlight">&#x23AF</div><a href="login.php">Account</a></li>
       </ul>
     </div>
   </header>
 <!-- Separator Black Line -->
     <div class="seperator-line"></div>
 
-
-
-
-
-
-    
+<!--  Account Portal -->
+ <div class="account-portal-body">
+      <div class="account-portal-settings">
+      <h3>Account Settings</h3>
+      <ul class="settings-list">
+        <li class="settings"><a href="#">Change Password</a></li>
+        <li class="settings"><a href="#">Update Email</a></li>
+        <li class="settings"><a href="#">Manage Subscriptions</a></li>
+        <li class="settings"><a href="#">Privacy Settings</a></li>
+      </ul>
+</div>
+    <div class="account-portal-container">
+      <h2>Welcome to Your Account Portal</h2>
+      <p>This is a placeholder for the account portal content.</p>
+      <p>You can manage your profile, view services, and access other features here.</p>
+      <button type="logout" onclick="window.location.href='login.php'">Log Out</button>
+      </div>
+</div>
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 LifeMap. All rights reserved.</p> 

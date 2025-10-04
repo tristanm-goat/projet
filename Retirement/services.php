@@ -28,8 +28,8 @@
     <div class="main-nav">
       <ul>
         <li><div class="highlight">&#x23AF</div><a href="index.php">Home</a></li>
-        <li class="active"><div class="highlight">&#x23AF</div><a href="about.php">About</a></li>
-        <li><div class="highlight">&#x23AF</div><a href="services.php">Services</a></li>
+        <li><div class="highlight">&#x23AF</div><a href="about.php">About</a></li>
+        <li class="active"><div class="highlight">&#x23AF</div><a href="services.php">Services</a></li>
         <li><div class="highlight">&#x23AF</div><a href="facility.php">Facility</a></li>
         <li><div class="highlight">&#x23AF</div><a href="contact.php">Contact</a></li>
 		    <li><div class="highlight">&#x23AF</div><a href="login.php">Login</a></li>
@@ -39,5 +39,3 @@
 <!-- Separator Black Line -->
 <div class="seperator-line"></div>
 </html>
-
-

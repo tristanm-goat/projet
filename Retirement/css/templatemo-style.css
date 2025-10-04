@@ -42,7 +42,7 @@ a:hover {
 }
 
 .container-fluid {
-  max-width: 2000;
+  max-width: 100%;
 }
 
 .small,
