@@ -39,7 +39,7 @@
     let userloggedin = false;
 
     document.getElementById("signin").addEventListener("click", function(event) {
-        localStorage.setItem("userloggedin", true);
+        localStorage.setItem("userloggedin", "true");
         window.location.href = 'portal.php';
     });
     </script>

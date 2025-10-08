@@ -28,7 +28,7 @@
       <h2>Welcome to Your Account Portal</h2>
       <p>This is a placeholder for the account portal content.</p>
       <p>You can manage your profile, view services, and access other features here.</p>
-      <button type="logout" onclick="window.location.href='login.php'">Log Out</button>
+      <button type="logout">Log Out</button>
       </div>
 </div>
   <!-- Footer Section -->
@@ -38,9 +38,20 @@
 <script>
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {
-      console.log("Access granted to portal.");
+    console.log("Access granted to portal.");
+    document.getElementById("login").innerText = "Account";
+	  document.getElementById("login").href = "portal.php";
+	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
   } else {
       window.location.href = 'login.php';
   }
+
+  document.querySelector("button[type='logout']").addEventListener("click", logout);
+  function logout() {
+    localStorage.setItem("userloggedin", "false");
+    window.location.href = 'login.php';
+  }
+
+
 </script>
 </html>

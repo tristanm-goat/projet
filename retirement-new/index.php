@@ -6,20 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>LifeMap</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/templatemo-style.css" />
     <link rel="stylesheet" href="css/styles.css" />
 
   </head>
-  <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-01.jpg">  
-      <div class="container-fluid">
+<body>
+
 
   <!-- Header -->
 <?php include 'view/header.php'; ?>
 
 <!-- Features -->
- <div class="docker">
+ <div class="parallax" data-parallax="scroll" data-image-src="img/bg-01.jpg">
+  <div class="docker">
     <div class="docker-1">
           <h1>Sample-Text-1</h1>
           <h2>Sample-description-2</h2>
@@ -32,64 +30,44 @@
           <h1>Sample-Text-1</h1>
           <h2>Sample-description-2</h2>
     </div>
-
  </div>
+</div>
 
-        <!-- Services header -->
-        <section class="row" id="tmServices">
-          <div class="col-12">
-            <div class="parallax-window tm-services-parallax-header"
-                 data-parallax="scroll"
-                 data-z-index="101"
-                 data-image-src="img/coffee-glass.jpg">
+  	<div class="seperator-line" style="border: 20px solid black;"></div>
 
-                 <div class="tm-bg-black-transparent text-center tm-services-header">
-                    <h2 class="text-uppercase tm-services-page-title">Our Services</h2>
-                    <p class="tm-services-description mb-0 small">
-                        Add text here about what a retirement home is and shit so that they can click the links below!. <br>
-                        Aliquam egestas lectus semper enim malesuada, in convallis nunc sagittis.<br>
-                        Pellentesque quis tellus vel tortor malesuada egestas.    
-                    </p>
-                </div>
-            </div>
-          </div>  
-
-        <!-- Call to Action -->
-        <section class="row" id="tmCallToAction">
-          <div class="col-12 tm-call-to-action-col">
-            <img src="img/call-to-action.jpg" alt="Image" class="img-fluid tm-call-to-action-image" />
-            <div class="tm-bg-white tm-call-to-action-text">
-              <h2 class="tm-call-to-action-title">Contactez-nous</h2>
-              <p class="tm-call-to-action-description">
-                Remplissez ce formulaire pour recevoir des informations ou de l'aide concernant les résidences pour aînés.
-              </p>
-              <form action="submit_form.php" method="post" class="tm-call-to-action-form">
-                <div class="form-group">
-                  <input name="name" type="text" class="tm-email-input" placeholder="Nom complet" required />
-                </div>
-                <div class="form-group">
-                  <input name="email" type="email" class="tm-email-input" placeholder="Email" required />
-                </div>
-                <div class="form-group">
-                  <input name="phone" type="tel" class="tm-email-input" placeholder="Téléphone" />
-                </div>
-                <div class="form-group">
-                  <select name="interested_in" class="tm-email-input" required>
-                    <option value="">Intéressé par...</option>
-                    <option value="trouver_residence">Trouver une résidence</option>
-                    <option value="inscription_attente">Inscription sur liste d'attente</option>
-                    <option value="gestion_etablissement">Gestion d'établissement</option>
-                    <option value="autre">Autre</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <textarea name="message" class="tm-email-input" rows="3" placeholder="Votre message ou question"></textarea>
-                </div>
-                <button type="submit" class="btn btn-secondary">Envoyer</button>
-              </form>
-            </div>
-          </div>
-        </section>
+ <div class="parallax" data-parallax="scroll" data-image-src="img/coffee-glass.jpg">
+  <div class="docker">
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+ </div>
+</div>
+    		<div class="seperator-line" style="border: 20px solid black;"></div>
+ <div class="parallax" data-parallax="scroll" data-image-src="img/mobile-screen.jpg">
+  <div class="docker">
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+    <div class="docker-1">
+          <h1>Sample-Text-1</h1>
+          <h2>Sample-description-2</h2>
+    </div>
+ </div>
+</div>
 
         <!-- Page footer -->
 <?php include 'view/footer.php'; ?>
