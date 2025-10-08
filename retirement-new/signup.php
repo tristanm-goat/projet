@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
   </head>
-<body­>
+<body>
 <?php include 'view/header.php'; ?>
 
 <!-- Login pop-up-->
