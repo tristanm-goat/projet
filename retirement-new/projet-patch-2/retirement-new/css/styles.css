@@ -1,8 +1,5 @@
 /* General body and layout */
-html {
-    scroll-behavior: smooth;
-    max-width: 100%;
-}
+
 body {
     font-family: 'Lexend', Arial, sans-serif;
     font-size: 20px;
