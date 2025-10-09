@@ -1,0 +1,156 @@
+/* Variables*/
+:root {
+  --main-font: helvetica, arial, sans-serif;
+  --font-base: 1rem ;
+  --font-small: 0.8rem ;
+  --font-medium: 1.2rem ;
+  --font-large: 1.6rem ;
+  --font-xlarge: 2rem ;
+  --font-xxlarge: 2.4rem ;
+  --main-text-color: black;
+  --second-text-color: #892E38; 
+  --third-text-color: navy; 
+  --accent-color: white;
+  --background-color: #51A4C8;
+  --default-padding: 1rem
+}
+
+/* TEXT STYLES */
+body {
+  background-color: var(--background-color);
+  margin: 0; 
+}
+
+h1 {
+    background-color: var(--accent-color);
+    font-family: var(--main-font);
+    font-size: var(--font-xxlarge);
+    font-weight: bold;
+    color: var(--main-text-color) ;
+    padding: var(--default-padding)
+}
+
+h2 {
+    background-color: var(--accent-color);
+    font-family: var(--main-font);
+    font-size: var(--font-xlarge);
+    font-weight: bold;
+    color: var(--second-text-color) ;
+    padding: var(--default-padding) ;
+    margin:0rem;
+}
+
+h3 {
+    background-color: var(--accent-color);
+    font-family: var(--main-font);
+    font-size: var(--font-large);
+    color: var(--second-text-color) ;
+    padding: var(--default-padding) ;
+    margin:0rem;
+}
+
+h4 {
+    background-color: var(--accent-color);
+    font-family: var(--main-font);
+    font-size: var(--font-medium);
+    color: var(--main-text-color) ;
+    padding: var(--default-padding) ;
+    margin:0rem;
+}
+
+h5 {
+    background-color: var(--background-color);
+    font-family: var(--main-font);
+    font-size: var(--font-small);
+    color: var(--main-text-color) ;
+    padding: var(--default-padding) ;
+    margin:0rem;
+}
+
+/* LAYOUT; GRID */
+.container{
+    display: grid;
+    gap: 0px ;
+    grid-template-areas:"logo title nav" 
+                        "sidebar content content" 
+                        "footer footer footer" ;
+}
+
+#logo {
+    background-color: var(--accent-color);
+    grid-area: logo ;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: var(--default-padding);
+    border-bottom: 3px solid var(--second-text-color);
+}
+
+#title {
+    grid-area: title;
+    background-color: var(--accent-color);
+    padding: var(--default-padding);
+    display: block;
+    align-items: center;
+    gap: 0rem;
+    border-bottom: 3px solid var(--second-text-color);
+
+}
+
+#nav {
+    grid-area: nav;
+    background-color: var(--accent-color);
+    padding: var(--default-padding);
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    border-bottom: 3px solid var(--second-text-color);
+}
+
+#sidebar {
+    grid-area: sidebar;
+    padding: var(--default-padding);
+    background-color: var(--accent-color);
+    border-right: 3px solid var(--second-text-color);
+
+}
+
+#content {
+    grid-area: content;
+    padding: var(--default-padding);
+    background-color: var(--background-color);
+    display: block;
+}
+
+#footer {
+    grid-area: footer;
+    padding: var(--default-padding);
+    background-color: var(--accent-color);
+    border-top: 3px solid var(--second-text-color);
+    display: flex;
+}
+
+
+/* LINKS */
+a:link {
+  color: orangered;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: purple; 
+}
+
+a:hover {
+  color: greenyellow;
+}
+
+a:active {
+  color: greenyellow;
+}
+
+
+
+/* This is a note in CSS */
