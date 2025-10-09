@@ -1,4 +1,20 @@
 /* General body and layout */
+:root {
+  --main-font: helvetica, arial, sans-serif;
+  --font-base: 1rem ;
+  --font-small: 0.8rem ;
+  --font-medium: 1.2rem ;
+  --font-large: 1.6rem ;
+  --font-xlarge: 2rem ;
+  --font-xxlarge: 2.4rem ;
+  --main-text-color: black;
+  --second-text-color: #892E38; 
+  --third-text-color: navy; 
+  --accent-color: white;
+  --background-color: #51A4C8;
+  --default-padding: 1rem
+}
+
 html {
     scroll-behavior: smooth;
     max-width: 100%;
@@ -10,7 +26,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f4f1ee;
+    background-color: transparent;
     color: #3aaed8;
     text-decoration: none;
     padding: 0px;
@@ -37,7 +53,6 @@ header {
 }
 
 .parallax {
-    background-image: url("img/bg-01.jpg");
     min-height: 400px; 
     background-attachment: fixed;
     background-position: center;
