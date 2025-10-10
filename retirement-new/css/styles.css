@@ -11,7 +11,7 @@
   --second-text-color: #892E38; 
   --third-text-color: navy; 
   --form-color: whitesmoke;
-  --accent-color: whitesmoke;
+  --accent-color: rgb(243, 189, 222);
   --background-color: #fff;
   --default-padding: 1rem
 }
@@ -212,7 +212,7 @@ label {
     color: #3aaed8;
 }
 
-button[type="Submit"], button[type="signin"], button[type="signup"] {
+button[type="Submit"], button[type="signin"], button[type="signup"], input[type="submit"], button[type="logout"] {
     background-color: lightblue;
     font-weight: bold;  
     border: none;

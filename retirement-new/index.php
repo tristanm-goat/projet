@@ -22,6 +22,7 @@
           <a href="facility.php" class="intro-button" style="display: inline-block; margin-top: 25px; padding: 15px 30px; background-color: #3aaed8; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;">Find Facilities Near You</a>
 </div>
 
+<div class="middle-page"></div>
 
 
 <div class="parallax" data-parallax="scroll" data-image-src="img/coffee-glass.jpg">
