@@ -13,22 +13,33 @@
 <body>
 <?php include 'view/header.php'; ?>
 
-<!--  Account Portal -->
+<!--  Likes Page -->
  <div class="account-portal-body">
-      <div class="account-portal-settings">
-      <h3>Account Settings</h3>
-      <ul class="settings-list">
-        <li class="settings"><a href="#">Change Password</a></li>
-        <li class="settings"><a href="#">Update Email</a></li>
-        <li class="settings"><a href="#">Manage Subscriptions</a></li>
-        <li class="settings"><a href="#">Privacy Settings</a></li>
-      </ul>
-</div>
     <div class="account-portal-container">
-      <h2>View your likes</h2>
-      <p>This is a placeholder for the account portal content.</p>
-      <p>You can manage your profile, view services, and access other features here.</p>
-      <button type="logout" onclick="window.location.href='login.php'">Log Out</button>
+      <h2>Your Liked Retirement Homes</h2>
+      <p>Here's a list of the facilities you've marked as favorites. Click on any item to view its full details.</p>
+
+      <div class="liked-facilities-section">
+        <ul class="liked-facility-list">
+            <li class="liked-facility-item">
+                <h3>Sunny Meadows Retirement Community</h3>
+                <p><strong>Address:</strong> 123 Golden Years Ave, Pleasantville</p>
+                <p>A vibrant community with a wide range of activities and excellent care services.</p>
+            </li>
+            <li class="liked-facility-item">
+                <h3>Lakeside Manor</h3>
+                <p><strong>Address:</strong> 456 Serenity Rd, Waterview</p>
+                <p>Enjoy beautiful lake views and a peaceful environment with top-notch amenities.</p>
+            </li>
+            <li class="liked-facility-item">
+                <h3>The Oaks Assisted Living</h3>
+                <p><strong>Address:</strong> 789 Liberty Ln, Freedom Town</p>
+                <p>Personalized care plans in a supportive and friendly atmosphere.</p>
+            </li>
+            <!-- More liked facilities can be added here dynamically -->
+        </ul>
+      </div>
+      <!-- The logout button is typically in the main account portal or header, not specifically on the likes page. -->
       </div>
 </div>
   <!-- Footer Section -->
@@ -43,12 +54,6 @@
 	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
   } else {
       window.location.href = 'login.php';
-  }
-  
-  document.querySelector("button[type='logout']").addEventListener("click", logout);
-  function logout() {
-    localStorage.setItem("userloggedin", "false");
-    window.location.href = 'login.php';
   }
 </script>
 </body>

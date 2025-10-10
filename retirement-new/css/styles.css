@@ -21,13 +21,13 @@ html {
 
 body {
     font-family: 'Lexend', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
     display: flex;
     flex-direction: column;
     align-items: center; 
     background-color: var(--background-color);
     color: #3aaed8;
-    margin: 0px;
+    margin: 0;
     min-height: 100vh;
 }
 
@@ -35,30 +35,47 @@ body {
 footer {
     background-color: #3aaed8;
     color: white;
-    text-align: center;
     width: 100%;
     margin-top: auto;
+    padding: 1rem 0;
 }
-/*FOOTER END*/
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.sitemap a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-size: 1rem;
+}
 
 /*HEADER */
 /* Logo and Company Name */
 header {
     background-image: var(--accent-color);
-    padding: 10px 0px;
+    padding: 0.625rem 0; /* 10px */
     display: flex;
     width: 100%; 
     color: #3aaed8;
-    max-height: 150px;
+    max-height: 9.375rem; /* 150px */
     position: relative;
-    border-bottom:#333 2px solid;
+    border-bottom:#333 0.125rem solid; /* 2px */
 }
 
 .logo-section, a.logo-section {
     text-decoration: none;
     flex-direction: row;
     align-items: flex-start;
-    padding-left: 50px;
+    padding-left: 3.125rem; /* 50px */
     justify-content: left;
     text-align: center;
     display: flex;
@@ -67,8 +84,8 @@ header {
 }
 
 .company-name {
-    font-size: 60px;
-    margin-left: 20px;
+    font-size: 3.75rem; /* 60px */
+    margin-left: 1.25rem; /* 20px */
     font-weight: bold;
     color: #8B0000;
     text-align: left;
@@ -77,7 +94,7 @@ header {
 }
 
 .company-name2 {
-    font-size: 60px;
+    font-size: 3.75rem; /* 60px */
     color: #3aaed8;
     font-weight: bold;
     text-align: left;
@@ -103,7 +120,7 @@ header {
 /* Navigation Bar*/
 
 li {
-    padding: 0px 20px;
+    padding: 0 1.25rem; /* 20px */
     text-align: center;
 }
 
@@ -148,8 +165,8 @@ a {
     background-size: cover;
     overflow: hidden; 
     width: 80%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
 }
 
 .index-services, .index-discovery {
@@ -157,10 +174,10 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0.625rem; /* 10px */
     height: auto;
-    padding: 20px;
-    margin: 50px;
+    padding: 1.25rem; /* 20px */
+    margin: 3.125rem; /* 50px */
     box-shadow: #333 0px 4px 10px;
 }
 
@@ -173,11 +190,11 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0.625rem; /* 10px */
     height: auto;
-    width: 500px;
-    margin: 20px;
-    box-shadow: #333 0px 4px 10px;
+    width: 31.25rem; /* 500px */
+    margin: 1.25rem; /* 20px */
+    box-shadow: #333 0 0.25rem 0.625rem; /* 0px 4px 10px */
 }
 
 .index-services-container {
@@ -189,20 +206,20 @@ a {
 h2 {
     color: black;
     font-weight: normal;
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
 }
 
 main {
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 20px;
-    margin-bottom: 60px;
+    padding-left: 12.5rem; /* 200px */
+    padding-right: 12.5rem; /* 200px */
+    padding-top: 1.25rem; /* 20px */
+    margin-bottom: 3.75rem; /* 60px */
 }
 
 /* Section Headings */
 .seperator-line {
-    border-top: 5px solid black;
-    border-top: 20px solid black;
+    border-top: 0.3125rem solid black; /* 5px */
+    border-top: 1.25rem solid black; /* 20px */
     width: 100%;
 }
 
@@ -217,13 +234,13 @@ button[type="Submit"], button[type="signin"], button[type="signup"], input[type=
     background-color: lightblue;
     font-weight: bold;  
     border: none;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 0.75rem; /* 12px */
 }
 
 button[type="signup"] {
@@ -232,17 +249,17 @@ button[type="signup"] {
 
 input[type="password"], input[type="text"], input[type="number"], input[type="email"] {
     color: lightslategray;
-    width: 300px;
+    width: 18.75rem; /* 300px */
     font-weight: bold;  
     border: none;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     text-align: left;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 1rem; /* 16px */
+    margin: 0.25rem 0.125rem; /* 4px 2px */
     cursor: pointer;
-    border-bottom: 1px solid black;
+    border-bottom: 0.0625rem solid black; /* 1px */
 }
 
 
@@ -267,7 +284,7 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 .table-container {
     border-right: 1px solid #ccc;
     overflow-y: auto;
-    padding: 0 20px;
+    padding: 0 1.25rem; /* 20px */
 }
 
 .facility-list {
@@ -280,9 +297,9 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 .facility-item {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
+    border-radius: 0.3125rem; /* 5px */
+    padding: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: left;
     position: relative;
@@ -290,8 +307,8 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 
 .like-icon {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0.9375rem; /* 15px */
+    right: 0.9375rem; /* 15px */
     font-size: 1.5rem;
     color: #ccc;
     cursor: pointer;
@@ -299,7 +316,7 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 }
 
 .like-icon:hover {
-    color: #ff6b6b; /* A reddish color for hover */
+    color: #ff6b6b; 
 }
 
 .facility-item h3 {
@@ -308,10 +325,45 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
     font-size: 1.2rem;
 }
 
+/* Liked Tab */
+.liked-facilities-section {
+    margin-top: 1.25rem; /* 20px */
+    padding-top: 1.25rem; /* 20px */
+    border-top: 0.0625rem solid #eee; /* 1px */
+}
+
+.liked-facility-list {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+    height: auto;
+}
+
+.liked-facility-item {
+    background-color: #f9f9f9; 
+    border: 1px solid #e0e0e0;
+    border-radius: 0.3125rem; /* 5px */
+    padding: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px */
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.08); /* 0 1px 3px */
+    text-align: left;
+}
+
+.liked-facility-item h3 {
+    margin-top: 0;
+    color: #3aaed8;
+    font-size: 1.2rem;
+}
+.liked-facility-item p {
+    color: #555; 
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+/*Liked tab END*/
 
 .facility-container {
-    padding-top: 20px;
-    margin-bottom: 60px;
+    padding-top: 1.25rem; /* 20px */
+    margin-bottom: 3.75rem; /* 60px */
     width: 80%;
 }
 /*FACILITY END*/
@@ -322,15 +374,15 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 150px;
+    margin-top: 9.375rem; /* 150px */
 }
 
 .login-container {
     text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    border-radius: 10px;
+    padding-left: 1.25rem; /* 20px */
+    padding-right: 1.25rem; /* 20px */
+    padding-bottom: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
     background-color: var(--form-color);
     border: 1px solid black;
 }
@@ -343,26 +395,26 @@ table {
 
 /* Account Portal */
 .account-portal-body {
-    margin-top: 15px;
+    margin-top: 0.9375rem; /* 15px */
     display: flex;
 }
 
 .account-portal-settings {
     justify-content: left;
     background-color: var(--form-color);
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
+    border: 0.0625rem solid black; /* 1px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    margin: 1.25rem; /* 20px */
 }
 
 .account-portal-container {
     text-align: left;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem; /* 20px */
+    border-radius: 0.625rem; /* 10px */
     background-color: var(--form-color);
-    border: 1px solid black;
-    margin: 20px;
+    border: 0.0625rem solid black; /* 1px */
+    margin: 1.25rem; /* 20px */
     width: 100%;
 }
 
@@ -374,7 +426,7 @@ ul.settings-list {
 }
 
 li.settings {
-    margin: 10px 0;
+    margin: 0.3125rem 0; /* 5px */
     text-align: left;
 }
 /*ACCOUNT PORTAL END*/
@@ -384,8 +436,8 @@ li.settings {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0;
-    gap: 40px;
+    padding: 3.75rem 0; /* 60px */
+    gap: 2.5rem; /* 40px */
 }
 
 .content-card {
@@ -393,8 +445,8 @@ li.settings {
     align-items: center;
     background-color: rgba(255, 255,255,0.95);
     width: 80%;
-    max-width: 1500px;
-    border-radius:10px;
+    max-width: 93.75rem; /* 1500px */
+    border-radius:0.625rem; /* 10px */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow:hidden;
 }
@@ -406,7 +458,7 @@ li.settings {
 }
 
 .card-text{
-    padding:30px;
+    padding:1.875rem; /* 30px */
 }
 
 .card-text h2 {
