@@ -145,7 +145,8 @@ header {
 
 h2 {
     color: black;
-    font-weight: bold;
+    font-weight: normal;
+    padding: 10px;
     }
 
 /* Navigation bar list */

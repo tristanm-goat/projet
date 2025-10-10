@@ -33,14 +33,23 @@
 </div>
   <!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
-</body>
 
 <script>
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {
       console.log("Access granted to portal.");
+    document.getElementById("login").innerText = "Account";
+	  document.getElementById("login").href = "portal.php";
+	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
   } else {
       window.location.href = 'login.php';
   }
+  
+  document.querySelector("button[type='logout']").addEventListener("click", logout);
+  function logout() {
+    localStorage.setItem("userloggedin", "false");
+    window.location.href = 'login.php';
+  }
 </script>
+</body>
 </html>

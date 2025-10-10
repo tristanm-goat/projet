@@ -1,2 +1,2 @@
-<footer><p>&copy; 2024 LifeMap. All rights reserved.</p></footer>
+<footer><p>&copy; 2025 LifeMap. All rights reserved.</p></footer>
 
