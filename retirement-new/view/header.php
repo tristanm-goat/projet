@@ -13,7 +13,7 @@
         <li><div class="highlight">&#x23AF</div><a href="./facility.php" target="_parent">Facility</a></li>
         <li><div class="highlight">&#x23AF</div><a href="./contact.php" target="_parent">Contact</a></li>
 		    <li><div class="highlight">&#x23AF</div><a id="login" href="./login.php" target="_parent">Login</a></li>
-		    <li><a id="likes"></a></li>
+		    <li id="likes"></li>
       </ul>
     </div>
   </header>	

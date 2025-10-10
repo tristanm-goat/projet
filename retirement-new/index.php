@@ -23,23 +23,26 @@
 </div>
 
 
+
+<div class="parallax" data-parallax="scroll" data-image-src="img/coffee-glass.jpg">
 <div class="docker-2">
       <h1>Our Services</h1>
       <div class="service-container">
             <div class="service-docker-2">
-                       <h1>Sample-Text-1</h1>
-                       <h2>Sample-description-2</h2>
+                       <h1>Find Your Perfect Retirement Comunity</h1>
+          <h2>Navigate your next chapter with confidence and ease. We provide personalized insights and comprehensive information to connect you with facilities that match your unique lifestyle and care needs.</h2>
                   </div>
             <div class="service-docker-2">
-                        <h1>Sample-Text-1</h1>
-                        <h2>Sample-description-2</h2>
+                      <h1>Clear path to Retirement Living</h1>
+          <h2>Stop guessing. Access verified reviews, detailed facility profiles, and transparent information to make the best decision. Your ideal retirement home is just a few clicks away.</h2>
             </div>
             <div class="service-docker-2">
-                        <h1>Sample-Text-1</h1>
-                        <h2>Sample-description-2</h2>
+                         <h1>Local Expert Support</h1>
+          <h2>Speak with a dedicated local care advisor at any stage of your search. Get objective advice and answers to your complex questions at no cost to you.</h2>
             </div>
       </div>
 </div>
+ </div>
 
         <!-- Page footer -->
 <?php include 'view/footer.php'; ?>
