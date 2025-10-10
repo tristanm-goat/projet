@@ -29,7 +29,7 @@
   	<div class="seperator-line" style="border: 20px solid black;"></div>
 
  <div class="parallax" data-parallax="scroll" data-image-src="img/coffee-glass.jpg">
-  <div class="docker-1" style="width: 70%;">
+  <div class="docker-1">
           <h1>Services</h1>
   </div>
   <div class="docker">
@@ -48,7 +48,7 @@
  </div>
 </div>
     		<div class="seperator-line" style="border: 20px solid black;"></div>
- <div class="parallax" data-parallax="scroll" data-image-src="img/mobile-screen.jpg">
+ <div class="parallax" data-parallax="scroll" data-image-src="img/oldgamble.jpg">
   <div class="docker">
     <div class="docker-1">
           <h1>Sample-Text-1</h1>
@@ -71,12 +71,10 @@
       <!-- .container-fluid -->
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
     <script>
-
-
   // Check if user is logged in
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {

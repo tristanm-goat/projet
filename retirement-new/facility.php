@@ -9,17 +9,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
-	<!-- Mapbox CSS -->
-	<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
-
-	<style>
-		#map { width: 100%; height: 400px; margin-top: 20px; }
-	</style>
 </head>
 <body>
 <?php include 'view/header.php'; ?>
 <!-- Main Content Section -->
-	<main>
+	<main class="facility-container">
 		<form id="location-form" method="post">
 			<label for="location">Address</label>
 			<input type="text" id="location" name="location" required>
@@ -36,20 +30,19 @@
 
 	<!-- Table Display Section -->
 	<div class="table-container">
-		<h1>Hello</h1>
-		<div id="nearest-facility"></div>
+		<h1>List</h1>
+		<?php include 'view/list.php'; ?>
 	</div>
 	<!-- Map Display Section -->
 	<div class="map-container">
-		<h1>Hello</h1>
-		<div id="map"></div>
+		<h1>Map</h1>
+			<?php include 'view/map.php'; ?>
 	</div>
 </div>
 </main>
 	<!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
 </body>
-
 
 
 <!-- Javascript Section -->
