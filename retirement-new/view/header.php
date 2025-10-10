@@ -1,9 +1,9 @@
 <header>
 	<!-- Logo Section -->
-    <div class="logo-section">
+    <a href="./index.php" class="logo-section">
       <img src="./img/logo-png.png"  alt="LifeMap Logo" class="company-logo" />
       <span class="company-name" >Life</span><span class="company-name2">Map</span>
-    </div>
+    </a>
 
 	<!-- Navigation Menu -->
     <div class="header-main-nav">

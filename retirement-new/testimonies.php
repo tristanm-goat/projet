@@ -46,4 +46,14 @@
 
   <?php include 'view/footer.php'; ?>
 </body>
+<!-- Javascript Section -->
+<script>
+  let userisloggedin = localStorage.getItem("userloggedin");
+  if (userisloggedin == "true") {
+	  document.getElementById("login").innerText = "Account";
+	  document.getElementById("login").href = "portal.php";
+	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
+  } else {;
+  }
+</script>
 </html>

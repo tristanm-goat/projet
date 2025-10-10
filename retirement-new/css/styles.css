@@ -54,7 +54,8 @@ header {
     border-bottom:#333 2px solid;
 }
 
-.logo-section {
+.logo-section, a.logo-section {
+    text-decoration: none;
     flex-direction: row;
     align-items: flex-start;
     padding-left: 50px;
@@ -62,6 +63,7 @@ header {
     text-align: center;
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 
 .company-name {

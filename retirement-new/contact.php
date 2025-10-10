@@ -18,7 +18,7 @@
     <div class="login-container" style="width: 500px; margin-top: 0px;">
       <h2>Contact Us</h2>
       <p style="color: black; margin-bottom: 20px;">Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
-      <form action="php/process_contact.php" method="post">
+      <form action="contact.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; box-sizing: border-box;">
@@ -43,4 +43,22 @@
 
 <?php include 'view/footer.php'; ?>
 </body>
+<!-- Javascript Section -->
+<script>
+  let userisloggedin = localStorage.getItem("userloggedin");
+  if (userisloggedin == "true") {
+	  document.getElementById("login").innerText = "Account";
+	  document.getElementById("login").href = "portal.php";
+	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
+  } else {;
+  }
+
+  document.querySelector("button[type='submit']").addEventListener("click", submit);
+
+  function submit() {
+    alert("Thank you for your message! We will get back to you shortly.");
+    window.location.href = './index.php';
+  }
+
+</script>
 </html>
