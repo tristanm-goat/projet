@@ -283,6 +283,21 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
     margin-bottom: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: left;
+    position: relative;
+}
+
+.like-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.like-icon:hover {
+    color: #ff6b6b; /* A reddish color for hover */
 }
 
 .facility-item h3 {
