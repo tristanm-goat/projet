@@ -6,7 +6,7 @@
     </div>
 
 	<!-- Navigation Menu -->
-    <div class="main-nav">
+    <div class="header-main-nav">
       <ul>
         <li><div class="highlight">&#x23AF</div><a href="./index.php" target="_parent">Home</a></li>
         <li><div class="highlight">&#x23AF</div><a href="./testimonies.php" target="_parent">Testimonies</a></li>

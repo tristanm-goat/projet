@@ -1,6 +1,5 @@
 /* General body and layout */
 :root {
-  --main-font: helvetica, arial, sans-serif;
   --font-base: 1rem ;
   --font-small: 0.8rem ;
   --font-medium: 1.2rem ;
@@ -19,6 +18,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Lexend', Arial, sans-serif;
     font-size: 20px;
@@ -27,12 +27,11 @@ body {
     align-items: center; 
     background-color: var(--background-color);
     color: #3aaed8;
-    text-decoration: none;
-    padding: 0px;
     margin: 0px;
     min-height: 100vh;
 }
 
+/*Footer*/
 footer {
     background-color: #3aaed8;
     color: white;
@@ -40,7 +39,10 @@ footer {
     width: 100%;
     margin-top: auto;
 }
+/*FOOTER END*/
 
+/*HEADER */
+/* Logo and Company Name */
 header {
     background-image: var(--accent-color);
     padding: 10px 0px;
@@ -52,7 +54,6 @@ header {
     border-bottom:#333 2px solid;
 }
 
-/* Logo and Company Name */
 .logo-section {
     flex-direction: row;
     align-items: flex-start;
@@ -66,7 +67,7 @@ header {
 .company-name {
     font-size: 60px;
     margin-left: 20px;
-        font-weight: bold;
+    font-weight: bold;
     color: #8B0000;
     text-align: left;
     display: flex;
@@ -87,7 +88,7 @@ header {
     width: 5rem;
 }
 
-.main-nav {
+.header-main-nav {
     position: absolute;
     left: 50%;
     top: 50%; 
@@ -95,78 +96,6 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden; 
-    width: 80%;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-/*Home Page CSS*/
-.docker-1, .docker-2, .docker {
-    background-color: whitesmoke;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    height: auto;
-    padding: 20px;
-    margin: 50px;
-    box-shadow: #333 0px 4px 10px;
-}
-
-.docker {
-    width: 50%;
-}
-
-.service-docker-1, .service-docker-2{
-    background-color: whitesmoke;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    height: auto;
-    width: 500px;
-    margin: 20px;
-    box-shadow: #333 0px 4px 10px;
-}
-
-.service-container {
-    display: flex;
-    justify-content: center;
-
-}
-
-h2 {
-    color: black;
-    font-weight: normal;
-    padding: 10px;
-    }
-
-/* Navigation bar list */
-ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-a {
-    color: black;
-    font-size: var(--font-large);
-    text-decoration: none;
-}
-
-main {
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 20px;
-    margin-bottom: 60px;
 }
 
 /* Navigation Bar*/
@@ -194,7 +123,79 @@ li.active .highlight{
     font-weight: bold;
 }
 
+/* Navigation bar list */
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
 
+a {
+    color: black;
+    font-size: var(--font-large);
+    text-decoration: none;
+}
+
+/*Header END*/
+
+/*Home Page CSS*/
+.index-services-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden; 
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.index-services, .index-discovery {
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: #333 0px 4px 10px;
+}
+
+.index-discovery {
+    width: 50%;
+}
+
+.index-services-docker {
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    width: 500px;
+    margin: 20px;
+    box-shadow: #333 0px 4px 10px;
+}
+
+.index-services-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+h2 {
+    color: black;
+    font-weight: normal;
+    padding: 10px;
+}
+
+main {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 20px;
+    margin-bottom: 60px;
+}
 
 /* Section Headings */
 .seperator-line {
@@ -203,16 +204,14 @@ li.active .highlight{
     width: 100%;
 }
 
-
 /* Form Styles */
-
 label {
     font-size: 30px;
     font-weight: bold;
     color: #3aaed8;
 }
 
-button[type="Submit"], button[type="signin"], button[type="signup"], input[type="submit"], button[type="logout"] {
+button[type="Submit"], button[type="signin"], button[type="signup"], input[type="submit"], button[type="logout"], button[type="intro-button"], button {
     background-color: lightblue;
     font-weight: bold;  
     border: none;
@@ -245,6 +244,7 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 }
 
 
+/* Facility Styles*/
 .facility-content {
   display: flex;
   justify-content: center;
@@ -312,9 +312,10 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
     margin-bottom: 60px;
     width: 80%;
 }
+/*FACILITY END*/
+
 
 /* Login Styles */
-
 .login-body {
     display: flex;
     justify-content: center;
@@ -336,7 +337,7 @@ table {
     margin: 0 auto;
     border-color: black;
 }
-
+/*LOGIN END*/
 
 /* Account Portal */
 .account-portal-body {
@@ -374,10 +375,10 @@ li.settings {
     margin: 10px 0;
     text-align: left;
 }
-
+/*ACCOUNT PORTAL END*/
 
 /* Testimonies section */
-.content-section{
+.content-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,14 +391,14 @@ li.settings {
     align-items: center;
     background-color: rgba(255, 255,255,0.95);
     width: 80%;
-    max-width: 1000px;
+    max-width: 1500px;
     border-radius:10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow:hidden;
 }
 
 .card-image{
-    width: 40%;
+    width: 60%;
     height: auto;
     object-fit:cover;
 }
@@ -415,3 +416,4 @@ li.settings {
     color: #555;
     line-height:1.6;
 }
+/*TESTIMONIES*/

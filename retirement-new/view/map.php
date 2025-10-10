@@ -1,1 +1,1 @@
-<img src="img/oldgamble.jpg" alt="Loading..."/ style="width:100%;height:100%;">
+<img src="img/map.png" alt="Loading...">
