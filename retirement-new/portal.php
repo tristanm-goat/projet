@@ -33,6 +33,7 @@
 <?php include 'view/footer.php'; ?>
 </body>
 
+
 <script>
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {
@@ -49,7 +50,7 @@
     localStorage.setItem("userloggedin", "false");
     window.location.href = 'login.php';
   }
-
-
 </script>
+
+
 </html>
