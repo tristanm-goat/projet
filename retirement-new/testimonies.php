@@ -14,9 +14,9 @@
   <div class="content-card">
     <img src="img/senior1.png" alt="happy senior image" class="card-image" />
     <div class="card-text">
-      <h2>Title one</h2>
+      <h2>Maxime C.</h2>
       <p>
-        writtent statement of hapiness
+        “I had no idea where to start looking. Thanks to this website, I was able to see all the retirement homes near me and filter them based on our needs. It’s simple, fast, and truly reassuring for families.”
       </p>
   </div>
 </div>
@@ -24,9 +24,9 @@
   <div class="content-card">
     <img src="img/senior2.jpg" alt="happy senior image" class="card-image" />
     <div class="card-text">
-      <h2>Title two</h2>
+      <h2>Jean-Paul R.</h2>
       <p>
-        writtent statement of hapiness
+        “This website helped me so much in finding the right retirement home for my father. Everything was clear, the information was up to date, and I could compare several options easily. Within just a few days, we found the perfect place!”
       </p>
   </div>
 </div>
@@ -34,9 +34,9 @@
     <div class="content-card">
         <img src="img/senior3.jpg" alt="happy senior image" class="card-image" />
     <div class="card-text">
-      <h2>Title three</h2>
+      <h2>Mike G.</h2>
       <p>
-        writtent statement of hapiness
+        “I loved how easy it was to use! With just a few clicks, I found several great options for my father. The website also made it easy to contact the residences directly — it really simplified everything.”
       </p>
   </div>
 </div>
