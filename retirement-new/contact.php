@@ -18,7 +18,7 @@
     <div class="login-container" style="width: 500px; margin-top: 0px;">
       <h2>Contact Us</h2>
       <p style="color: black; margin-bottom: 20px;">Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
-      <form action="process_contact.php" method="post">
+      <form action="php/process_contact.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; box-sizing: border-box;">
