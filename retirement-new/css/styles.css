@@ -10,23 +10,22 @@
   --main-text-color: black;
   --second-text-color: #892E38; 
   --third-text-color: navy; 
-  --accent-color: white;
-  --background-color: #51A4C8;
+  --form-color: whitesmoke;
+  --accent-color: whitesmoke;
+  --background-color: #fff;
   --default-padding: 1rem
 }
 
 html {
     scroll-behavior: smooth;
-    max-width: 100%;
 }
 body {
     font-family: 'Lexend', Arial, sans-serif;
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+    align-items: center; /* Center flex items like .parallax */
+    background-color: var(--background-color);
     color: #3aaed8;
     text-decoration: none;
     padding: 0px;
@@ -36,108 +35,29 @@ body {
 
 footer {
     background-color: #3aaed8;
-    color: #f4f1ee;
+    color: white;
     text-align: center;
     width: 100%;
     margin-top: auto;
 }
 
 header {
-    background-image: linear-gradient(to bottom, #e6e6fa, #e6e6fa);
+    background-image: var(--accent-color);
     padding: 10px 0px;
     display: flex;
+    width: 100%; 
     color: #3aaed8;
-    justify-content: center;
-    min-width: 100%;
     max-height: 150px;
-}
-
-.parallax {
-    min-height: 400px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover;
-}
-
-/*Home Page CSS*/
-.docker {
-    display: flex;
-    justify-content: center;
-    height: 500px;
-}
-
-.docker-1 {
-    background-color: whitesmoke;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    height: auto;
-    width: auto;
-    margin: 20px;
-}
-
-h2 {
-    color: black;
-    font-weight: bold;
-    }
-
-/* Navigation bar list */
-ul {
-    list-style-type: none;
-    display: flex;
-    width: 100%;
-}
-
-a {
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-main {
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 20px;
-    margin-bottom: 60px;
-}
-
-/* Navigation Bar*/
-.main-nav {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-left: 300px;
-}
-li {
-    padding: 0px 20px;
-    text-align: center;
-}
-
-li:hover {
-    color: #3aaed8;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-}
-
-li .highlight {
-    visibility: hidden;
-}
-
-li:hover .highlight,
-li.active .highlight{
-    visibility: visible;
-    color: red;
-    font-weight: bold;
+    position: relative;
+    border-bottom:#333 2px solid;
 }
 
 /* Logo and Company Name */
 .logo-section {
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 50px;
+    justify-content: left;
     text-align: center;
     display: flex;
     align-items: center;
@@ -167,9 +87,115 @@ li.active .highlight{
     width: 5rem;
 }
 
+.main-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.parallax {
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 80%;
+    background-size: cover;
+    overflow: hidden; 
+}
+
+/*Home Page CSS*/
+.docker-1, .docker-2, .docker {
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    width: 50%;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: #333 0px 4px 10px;
+}
+
+.service-docker-1, .service-docker-2{
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    width: 50%;
+    margin: 20px;
+    box-shadow: #333 0px 4px 10px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    }
+
+/* Navigation bar list */
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: black;
+    font-size: var(--font-large);
+    text-decoration: none;
+}
+
+main {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 20px;
+    margin-bottom: 60px;
+}
+
+/* Navigation Bar*/
+
+li {
+    padding: 0px 20px;
+    text-align: center;
+}
+
+li:hover {
+    color: #3aaed8;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+li .highlight {
+    visibility: hidden;
+}
+
+li:hover .highlight,
+li.active .highlight{
+    visibility: visible;
+    color: red;
+    font-weight: bold;
+}
+
+
+
 /* Section Headings */
 .seperator-line {
     border-top: 5px solid black;
+    border-top: 20px solid black;
     width: 100%;
 }
 
@@ -283,7 +309,7 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
     padding-right: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--form-color);
     border: 1px solid black;
 }
 
@@ -301,7 +327,7 @@ table {
 
 .account-portal-settings {
     justify-content: left;
-    background-color: white;
+    background-color: var(--form-color);
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
@@ -312,7 +338,7 @@ table {
     text-align: left;
     padding: 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--form-color);
     border: 1px solid black;
     margin: 20px;
     width: 100%;

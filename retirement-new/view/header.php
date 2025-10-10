@@ -17,5 +17,3 @@
       </ul>
     </div>
   </header>	
-  	<div class="seperator-line"></div>
-  </body>
