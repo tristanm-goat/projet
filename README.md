@@ -1,4 +1,4 @@
 # projet
-Cours ADM4779 Web Dev
+Utilisation du projet :
 
-Pour demeurer organisé on peut écrire nos plans ici si jamais y'a de quoi!
+- Sign in feature est utilisable, simplement appuyer sur le bouton 'sign up' dans le login terminal' 
