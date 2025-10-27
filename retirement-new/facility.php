@@ -14,14 +14,9 @@
 <?php include 'view/header.php'; ?>
 <!-- Main Content Section -->
 	<main class="facility-container">
-		<form id="location-form" method="post">
-			<label for="location">Address</label>
-			<input type="text" id="location" name="location" required>
-			<input type="submit" value="Search" id="search-button">
-
-			<label for="location">Filter</label>
-			<input type="text" id="location" name="location" required>
-			<input type="submit" value="Search" id="search-button">
+		<form id="location-form" onsubmit="return false;">
+			<button type="button" id="use-location-btn">Use My Location</button>
+			<button type="submit" id="search-button">Search</button>
 		</form>
 		<br>
 		<div class="seperator-line"></div>
@@ -30,7 +25,7 @@
 
 	<!-- Table Display Section -->
 	<div class="table-container">
-		<h1>List</h1>
+		<h1>Nearby Facilities</h1>
 		<?php include 'view/list.php'; ?>
 	</div>
 	<!-- Map Display Section -->
@@ -46,6 +41,49 @@
 
 
 <!-- Javascript Section -->
+<script>
+    let userLatitude = null;
+    let userLongitude = null;
+
+    document.getElementById('use-location-btn').addEventListener('click', function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                userLatitude = position.coords.latitude;
+                userLongitude = position.coords.longitude;
+                alert('Location captured! Click "Search" to find nearby facilities.');
+                document.getElementById('search-button').disabled = false;
+            }, function(error) {
+                alert('Error getting location: ' + error.message);
+            });
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    });
+
+    document.getElementById('location-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (userLatitude === null || userLongitude === null) {
+            alert('Please use the "Use My Location" button first to get your coordinates.');
+            return;
+        }
+
+        const listContainer = document.querySelector('.table-container .facility-list');
+        listContainer.innerHTML = '<li>Loading...</li>';
+
+        const formData = new FormData();
+        formData.append('latitude', userLatitude);
+        formData.append('longitude', userLongitude);
+
+        fetch('php/find-facilities.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            listContainer.innerHTML = data;
+        });
+    });
+</script>
 <script>
   let userisloggedin = localStorage.getItem("userloggedin");
   if (userisloggedin == "true") {

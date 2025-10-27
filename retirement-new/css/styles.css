@@ -230,7 +230,7 @@ label {
     color: #3aaed8;
 }
 
-button[type="Submit"], button[type="signin"], button[type="signup"], input[type="submit"], button[type="logout"], button[type="intro-button"], button {
+button[type="Submit"], button[type="signin"], button[type="signup"], input[type="submit"], button[type="logout"], button[type="intro-button"], button, button[type="phone"] {
     background-color: lightblue;
     font-weight: bold;  
     border: none;
@@ -247,7 +247,7 @@ button[type="signup"] {
     background-color: lightgray;
 }
 
-input[type="password"], input[type="text"], input[type="number"], input[type="email"] {
+input[type="password"], input[type="text"], input[type="number"], input[type="email"], input[type="phone"] {
     color: lightslategray;
     width: 18.75rem; /* 300px */
     font-weight: bold;  

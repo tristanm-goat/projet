@@ -1,4 +1,6 @@
 # projet
 Utilisation du projet :
 
-- Sign in feature est utilisable, simplement appuyer sur le bouton 'sign up' dans le login terminal' 
+- Sign in feature est utilisable, simplement appuyer sur le bouton 'sign up' dans le login terminal'
+
+mchre091.duckdns.org (Database)

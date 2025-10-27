@@ -17,19 +17,10 @@
  <div class="login-body">
     <div class="login-container">
       <h2>Sign-up Form</h2>
-      <form action="process_login.php" method="post">
-      <table>
-        <tr>
-           <th><input type="text" id="username" name="username" placeholder="Username, E-mail, Phone Number" required /></th>
-        </tr>
-        <tr>
-          <th><input type="password" id="password" name="password" placeholder="Password" required /></th>
-        </tr>
-        <tr>
-          <th><input type="password" id="password" name="password" placeholder="Re-enter Password" required /></th>
-        </tr>
-      </table>  
-      <button type="signup" onclick="window.location.href='login.php'">Sign Up</button>
+      <form action="php/user_signup.php" method="post">
+              <input type="text" id="username" name="username" placeholder="Username" required /><br>
+              <input type="password" id="password" name="password" placeholder="Password" required /><br>
+              <button type="submit">Sign Up</button>
       </form>
     </div>
 </div>
