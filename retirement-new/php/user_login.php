@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'connection.php';
 
     $username = $_POST["username"];
@@ -6,7 +7,6 @@ include 'connection.php';
 
     $stmt = $conn->prepare("SELECT account_user, account_password FROM account WHERE account_user = ?");
     if ($stmt === false) {
-        // In a real app, log this error and show a generic message
         die("Error preparing statement: " . htmlspecialchars($conn->error));
     }
 
@@ -20,7 +20,7 @@ include 'connection.php';
         if (password_verify($password, $user['account_password'])) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $user['account_user'];
-            header("Location: ../index.php");
+            header("Location: ../portal.php");
             exit();
         }
     }

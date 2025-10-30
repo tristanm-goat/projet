@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['latitude']) || !isset($_POST['longitude'])) {
     http_response_code(400);
@@ -9,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['latitude']) || !isse
 $user_lat = $_POST['latitude'];
 $user_lon = $_POST['longitude'];
 
-// --- Database Connection ---
-// IMPORTANT: Replace with your actual database credentials.
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -40,7 +39,7 @@ SELECT *, (
 ) AS distance
 FROM rhra_entries_detailed
 ORDER BY distance ASC
-LIMIT 3
+LIMIT 10
 ";
 
 $stmt = $conn->prepare($sql);
@@ -50,11 +49,14 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        $facility_id = $row['id']; 
         echo '<li class="facility-item">';
-        echo '<span class="like-icon">&hearts;</span>';
         echo '<h3>' . htmlspecialchars($row['name']) . '</h3>';
         echo '<p><strong>Distance:</strong> ' . round($row['distance'], 2) . ' km away</p>';
-        // You can add more details here if they exist in your table, like address.
+        echo '<form class="like-form" action="php/like_facility.php" method="POST">';
+        echo '<input type="hidden" name="facility_id" value="' . htmlspecialchars($facility_id) . '">';
+        echo '<button type="submit" class="like-button">&#x2661;</button>';
+        echo '</form>';
         echo '</li>';
     }
 } else {

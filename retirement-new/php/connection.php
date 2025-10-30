@@ -1,9 +1,7 @@
 <?php
-session_start();
-
-$host="localhost";
-$username="root";
-$password="";
+$host="mchre091.duckdns.org:3306";
+$username="mchre091";
+$password="admin";
 $dbname="login-details";
 
 $conn = new mysqli($host, $username, $password, $dbname);

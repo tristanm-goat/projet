@@ -47,14 +47,4 @@
 <!--javascript for parralax-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-<script>
-  // Check if user is logged in
-  let userisloggedin = localStorage.getItem("userloggedin");
-  if (userisloggedin == "true") {
-	  document.getElementById("login").innerText = "Account";
-	  document.getElementById("login").href = "portal.php";
-	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
-  } else {;
-  }
-</script>
 </html>
