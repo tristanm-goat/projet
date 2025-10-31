@@ -11,7 +11,18 @@
   <link rel="stylesheet" href="css/styles.css" />
   </head>
 <body>
-<?php include 'view/header.php'; ?>
+<?php 
+  include 'view/header.php'; 
+  include 'php/account_like_list.php';
+
+  // Redirect to login if user is not logged in
+  if ($loggedin !== true) {
+      header("Location: login.php");
+      exit();
+  }
+
+  $liked_facilities = get_liked_facilities($_SESSION['username']);
+?>
 
 <!--  Likes Page -->
  <div class="account-portal-body">
@@ -21,22 +32,54 @@
 
       <div class="liked-facilities-section">
         <ul class="liked-facility-list">
-            <li class="liked-facility-item">
-                <h3>Sunny Meadows Retirement Community</h3>
-                <p><strong>Address:</strong> 123 Golden Years Ave, Pleasantville</p>
-                <p>A vibrant community with a wide range of activities and excellent care services.</p>
-            </li>
-            <li class="liked-facility-item">
-                <h3>Lakeside Manor</h3>
-                <p><strong>Address:</strong> 456 Serenity Rd, Waterview</p>
-                <p>Enjoy beautiful lake views and a peaceful environment with top-notch amenities.</p>
-            </li>
-            <li class="liked-facility-item">
-                <h3>The Oaks Assisted Living</h3>
-                <p><strong>Address:</strong> 789 Liberty Ln, Freedom Town</p>
-                <p>Personalized care plans in a supportive and friendly atmosphere.</p>
-            </li>
-            <!-- More liked facilities can be added here dynamically -->
+            <?php if (empty($liked_facilities)): ?>
+                <li class="liked-facility-item">
+                    <p>You haven't saved any facilities yet. Go to the <a href="facility.php">Facility</a> page to find and save your favorites!</p>
+                </li>
+            <?php else: ?>
+                <?php foreach ($liked_facilities as $facility): ?>
+                    <li class="liked-facility-item">
+                        <h3><?php echo htmlspecialchars($facility['name']); ?></h3>
+                        <div class="facility-details-grid">
+                            <p><strong>Address:</strong> <?php echo htmlspecialchars($facility['streetaddress'] . ', ' . $facility['citytown'] . ' ' . $facility['postal']); ?></p>
+                            <p><strong>License #:</strong> <?php echo htmlspecialchars($facility['lic_number']); ?></p>
+                            <p><strong>License Status:</strong> <?php echo htmlspecialchars($facility['lic_status']); ?></p>
+                            <p><strong>Resident Capacity:</strong> <?php echo htmlspecialchars($facility['resident_capacity']); ?></p>
+                            <p><strong>Number of Suites:</strong> <?php echo htmlspecialchars($facility['number_of_suites']); ?></p>
+                            <?php if (!empty($facility['previously_known_as'])): ?>
+                                <p><strong>Previously Known As:</strong> <?php echo htmlspecialchars($facility['previously_known_as']); ?></p>
+                            <?php endif; ?>
+                        </div>
+
+                        <h4>Care Services Offered:</h4>
+                        <ul class="services-list">
+                            <?php
+                                $services = [
+                                    'assistance_with_bathing' => 'Assistance with Bathing',
+                                    'assistance_with_personal_hygiene' => 'Personal Hygiene Assistance',
+                                    'assistance_with_ambulation' => 'Ambulation Assistance',
+                                    'assistance_with_feeding' => 'Feeding Assistance',
+                                    'provision_of_skin_and_wound_care' => 'Skin and Wound Care',
+                                    'continence_care' => 'Continence Care',
+                                    'administration_of_drugs_or_another_substance' => 'Medication Administration',
+                                    'provision_of_a_meal' => 'Meal Provision',
+                                    'dementia_care_program' => 'Dementia Care Program',
+                                    'assistance_with_dressing' => 'Assistance with Dressing',
+                                    'pharmacists_provides_while_engaging_in_the_practice_of_pharmacy' => 'Pharmacist Services',
+                                    'phy_and_surg_provides_while_engaging_in_the_practice_of_medicine' => 'Physician/Surgeon Services',
+                                    'nurses_provides_while_engaging_in_the_practice_of_nursing' => 'Nursing Services',
+                                ];
+
+                                foreach ($services as $key => $description) {
+                                    if (isset($facility[$key]) && $facility[$key] === 'TRUE') {
+                                        echo '<li>' . htmlspecialchars($description) . '</li>';
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
       </div>
       <!-- The logout button is typically in the main account portal or header, not specifically on the likes page. -->
@@ -45,16 +88,5 @@
   <!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
 
-<script>
-  let userisloggedin = localStorage.getItem("userloggedin");
-  if (userisloggedin == "true") {
-      console.log("Access granted to portal.");
-    document.getElementById("login").innerText = "Account";
-	  document.getElementById("login").href = "portal.php";
-	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
-  } else {
-      window.location.href = 'login.php';
-  }
-</script>
 </body>
 </html>

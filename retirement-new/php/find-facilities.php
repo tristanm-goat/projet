@@ -10,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['latitude']) || !isse
 $user_lat = $_POST['latitude'];
 $user_lon = $_POST['longitude'];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$host="mchre091.duckdns.org:3306";
+$username="mchre091";
+$password="admin";
 $dbname = "ontario_facility_rhra";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     // In a real application, you would log this error, not display it to the user.
@@ -53,10 +53,11 @@ if ($result->num_rows > 0) {
         echo '<li class="facility-item">';
         echo '<h3>' . htmlspecialchars($row['name']) . '</h3>';
         echo '<p><strong>Distance:</strong> ' . round($row['distance'], 2) . ' km away</p>';
-        echo '<form class="like-form" action="php/like_facility.php" method="POST">';
-        echo '<input type="hidden" name="facility_id" value="' . htmlspecialchars($facility_id) . '">';
-        echo '<button type="submit" class="like-button">&#x2661;</button>';
-        echo '</form>';
+        echo '<div class="facility-options">';
+        echo '  <button type="button" class="option-save-button" data-facility-id="' . htmlspecialchars($facility_id) . '" data-option="1">Save to 1</button>';
+        echo '  <button type="button" class="option-save-button" data-facility-id="' . htmlspecialchars($facility_id) . '" data-option="2">Save to 2</button>';
+        echo '  <button type="button" class="option-save-button" data-facility-id="' . htmlspecialchars($facility_id) . '" data-option="3">Save to 3</button>';
+        echo '</div>';
         echo '</li>';
     }
 } else {
@@ -65,3 +66,4 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 $conn->close();
+?>

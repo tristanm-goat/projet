@@ -12,6 +12,7 @@
 </head>
 <body>
 <?php include 'view/header.php'; ?>
+<div class="menu-open" style="opacity: 100%; background-color: white;">
 <!-- Main Content Section -->
 	<main class="facility-container">
 		<form id="location-form" onsubmit="return false;">
@@ -35,6 +36,7 @@
 	</div>
 </div>
 </main>
+
 	<!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
 </body>
@@ -54,6 +56,9 @@
                 document.getElementById('search-button').disabled = false;
             }, function(error) {
                 alert('Error getting location: ' + error.message);
+                alert('Setting user default location');
+                userLatitude = 45.4231;
+                userLongitude = -75.6971;
             });
         } else {
             alert('Geolocation is not supported by this browser.');
@@ -83,14 +88,51 @@
             listContainer.innerHTML = data;
         });
     });
-</script>
-<script>
-  let userisloggedin = localStorage.getItem("userloggedin");
-  if (userisloggedin == "true") {
-	  document.getElementById("login").innerText = "Account";
-	  document.getElementById("login").href = "portal.php";
-	  document.getElementById("likes").innerHTML = '<div class="highlight">&#x23AF</div><a href="likes.php">Likes</a>';
-  } else {;
-  }
+
+    // --- Logic for saving a facility to an option ---
+    // Event delegation for the save buttons. We listen on the document to ensure
+    // that clicks are captured even on dynamically added elements.
+    document.addEventListener('click', function(event) {
+        const saveButton = event.target.closest('.option-save-button');
+        if (saveButton) {
+            // Use the PHP variable from header.php to check login status
+            const isLoggedIn = <?php echo json_encode($loggedin); ?>;
+            if (!isLoggedIn) {
+                alert('You must be logged in to save a facility.');
+                window.location.href = 'login.php'; // Redirect to login page
+                return;
+            }
+
+            const facilityId = saveButton.dataset.facilityId;
+            const optionNumber = saveButton.dataset.option;
+
+            const formData = new FormData();
+            formData.append('facility_id', facilityId);
+            formData.append('option_number', optionNumber);
+
+            // Temporarily disable the button to prevent multiple clicks
+            saveButton.disabled = true;
+            saveButton.textContent = 'Saving...';
+
+            fetch('php/save_like.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                // Re-enable the button after the request is complete
+                saveButton.disabled = false;
+                saveButton.textContent = `Save to ${optionNumber}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while saving your like.');
+                // Re-enable the button on error
+                saveButton.disabled = false;
+                saveButton.textContent = `Save to ${optionNumber}`;
+            });
+        }
+    });
 </script>
 </html>
