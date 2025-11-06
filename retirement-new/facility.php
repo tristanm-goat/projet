@@ -8,20 +8,30 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Mapbox GL JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 <?php include 'view/header.php'; ?>
-<div class="menu-open" style="opacity: 100%; background-color: white;">
+
 <!-- Main Content Section -->
-	<main class="facility-container">
-		<form id="location-form" onsubmit="return false;">
-			<button type="button" id="use-location-btn">Use My Location</button>
-			<button type="submit" id="search-button">Search</button>
-		</form>
+<main class="facility-container">
+        <form id="facility-search-form" onsubmit="return false;">
+            <button type="button" id="use-location-btn">Use My Location</button>
+            <button type="submit" id="search-button" disabled>Search</button>
+            <select type="filter_lic" id="filter_lic">Filter
+                <option value="Issued">Issued</option>
+                <option value="Application_received">Application Received</option>
+                <option value="Withdrawn">Withdrawn</option>
+                <option value="Terminated">Terminated</option>
+            </select>
+        </form>
+        <p>Home Count Search: <span id="slider"></span> <input type="range" min="1" max="50" value="10" class="slider" id="filter_asc"></p>
 		<br>
 		<div class="seperator-line"></div>
-<div class="facility-content">
+        <div class="facility-content">
 
 
 	<!-- Table Display Section -->
@@ -34,7 +44,6 @@
 		<h1>Map</h1>
 			<?php include 'view/map.php'; ?>
 	</div>
-</div>
 </main>
 
 	<!-- Footer Section -->
@@ -43,52 +52,70 @@
 
 
 <!-- Javascript Section -->
+ <!-- Any MAPBOX data was AI Generated or obtained using their API -->
+
 <script>
     let userLatitude = null;
     let userLongitude = null;
+    let map = null; 
+    let markers = []; 
 
+
+// slider
+var slider = document.getElementById("filter_asc");
+var output = document.getElementById("slider");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+// Location Button Listener
     document.getElementById('use-location-btn').addEventListener('click', function() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition((position) => {
                 userLatitude = position.coords.latitude;
                 userLongitude = position.coords.longitude;
-                alert('Location captured! Click "Search" to find nearby facilities.');
                 document.getElementById('search-button').disabled = false;
-            }, function(error) {
-                alert('Error getting location: ' + error.message);
-                alert('Setting user default location');
-                userLatitude = 45.4231;
-                userLongitude = -75.6971;
+                alert('Location found! Click "Search" to find facilities.');
+            }, (error) => {
+                alert(`Error getting location: ${error.message}`);
             });
         } else {
-            alert('Geolocation is not supported by this browser.');
+            alert('Geolocation is not supported by your browser.');
         }
     });
 
-    document.getElementById('location-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (userLatitude === null || userLongitude === null) {
-            alert('Please use the "Use My Location" button first to get your coordinates.');
-            return;
-        }
-
+// Search Button Listener
+    document.getElementById('search-button').addEventListener('click', function() {
         const listContainer = document.querySelector('.table-container .facility-list');
+        // get Filter data
+        let filterSelection = document.getElementById('filter_lic').value;
+        // get amount of homes seen data
+        let amountSelection = document.getElementById('filter_asc').value;
+        console.log(amountSelection);
+        
         listContainer.innerHTML = '<li>Loading...</li>';
-
         const formData = new FormData();
         formData.append('latitude', userLatitude);
         formData.append('longitude', userLongitude);
+        formData.append('license_filter', filterSelection)
+        formData.append('asc_filter', amountSelection)
+        // send data to find-facilities.php
 
         fetch('php/find-facilities.php', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
-            listContainer.innerHTML = data;
+            listContainer.innerHTML = data.html;
+            updateMap(data.locations, userLatitude, userLongitude);
         });
     });
 
+
+// Save Facility Button
     // --- Logic for saving a facility to an option ---
     // Event delegation for the save buttons. We listen on the document to ensure
     // that clicks are captured even on dynamically added elements.
@@ -135,4 +162,7 @@
         }
     });
 </script>
+
+<!-- Mapbox Script -->
+ <script src="js/mapbox_logic.js"></script>
 </html>

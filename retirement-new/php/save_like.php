@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Connects to login database
 include 'connection.php';
 
 header('Content-Type: application/json');
@@ -16,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST" || !isset($_POST['facility_id']) || !i
     exit();
 }
 
+// retrieve data from the 'save buttons' in the javascript from facility.php
 $facility_id = $_POST['facility_id']; // Keep as string
 $option_number = (int)$_POST['option_number']; // Option number is still an integer
 $username = $_SESSION['username'];
@@ -26,6 +29,7 @@ if (!in_array($option_number, [1, 2, 3])) {
     exit();
 }
 
+// Updates database with the correct data
 $update_column = "account_option" . $option_number;
 
 // 1. Prepare the statement to fetch current user options
@@ -45,6 +49,7 @@ $result = $stmt_check->get_result();
 $user_options = $result->fetch_assoc();
 $stmt_check->close();
 
+// error user not found
 if (!$user_options) {
     echo json_encode(['status' => 'error', 'message' => 'User account not found.']);
     exit();
