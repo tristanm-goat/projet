@@ -1,6 +1,6 @@
 <?php
 $host="mchre091.duckdns.org:3306";
-$username="mchre091";
+$username="member";
 $password="admin";
 $dbname="login-details";
 

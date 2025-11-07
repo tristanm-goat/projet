@@ -16,7 +16,7 @@ $asc_filter = (int)$_POST['asc_filter'];
 
 // Database connection
 $host="mchre091.duckdns.org:3306";
-$username="mchre091";
+$username="member";
 $password="admin";
 $dbname = "ontario_facility_rhra";
 $conn = new mysqli($host, $username, $password, $dbname);

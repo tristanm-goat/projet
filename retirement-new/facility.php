@@ -51,9 +51,6 @@
 </body>
 
 
-<!-- Javascript Section -->
- <!-- Any MAPBOX data was AI Generated or obtained using their API -->
-
 <script>
     let userLatitude = null;
     let userLongitude = null;
@@ -72,6 +69,13 @@ slider.oninput = function() {
 
 // Location Button Listener
     document.getElementById('use-location-btn').addEventListener('click', function() {
+        const setDefaultLocation = () => {
+            userLatitude = 45.4231; // Ottawa Latitude
+            userLongitude = -75.6971; // Ottawa Longitude
+            document.getElementById('search-button').disabled = false;
+            alert('Could not get your location. Defaulting to Ottawa, ON. Click "Search" to find facilities.');
+        };
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 userLatitude = position.coords.latitude;
@@ -79,10 +83,12 @@ slider.oninput = function() {
                 document.getElementById('search-button').disabled = false;
                 alert('Location found! Click "Search" to find facilities.');
             }, (error) => {
-                alert(`Error getting location: ${error.message}`);
+                console.error(`Geolocation error: ${error.message}`);
+                setDefaultLocation();
             });
         } else {
             alert('Geolocation is not supported by your browser.');
+            setDefaultLocation();
         }
     });
 
@@ -94,7 +100,10 @@ slider.oninput = function() {
         // get amount of homes seen data
         let amountSelection = document.getElementById('filter_asc').value;
         console.log(amountSelection);
-        
+        console.log(filterSelection);
+        console.log(userLatitude);
+        console.log(userLongitude);
+
         listContainer.innerHTML = '<li>Loading...</li>';
         const formData = new FormData();
         formData.append('latitude', userLatitude);
@@ -112,7 +121,10 @@ slider.oninput = function() {
             listContainer.innerHTML = data.html;
             updateMap(data.locations, userLatitude, userLongitude);
         });
-    });
+        });
+
+
+
 
 
 // Save Facility Button
@@ -162,7 +174,6 @@ slider.oninput = function() {
         }
     });
 </script>
-
 <!-- Mapbox Script -->
- <script src="js/mapbox_logic.js"></script>
+<script src="js/mapbox_logic.js"></script>
 </html>

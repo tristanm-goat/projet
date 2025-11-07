@@ -278,7 +278,9 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 .table-container, .map-container {
   flex: 1; 
   width: 120%;
-  text-align: center; 
+  text-align: center;
+  display: flex; /* Make this a flex container */
+  flex-direction: column; /* Stack children vertically */
   overflow: hidden; 
   background-color: #f0f0f0;
 }
@@ -412,7 +414,8 @@ input[type="password"], input[type="text"], input[type="number"], input[type="em
 .facility-container {
     padding-top: 1.25rem; /* 20px */
     margin-bottom: 3.75rem; /* 60px */
-    width: 100%;
+    width: 90%;
+    overflow: hidden;
 }
 /*FACILITY END*/
 
@@ -521,4 +524,4 @@ li.settings {
 /*TESTIMONIES*/
 
 /*MAPBOX*/
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#map { flex-grow: 1; /* Allow map to fill available space */ width: 100%; }
