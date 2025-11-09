@@ -13,6 +13,7 @@ $user_lat = $_POST['latitude'];
 $user_lon = $_POST['longitude'];
 $lic_filter = $_POST['license_filter'];
 $asc_filter = (int)$_POST['asc_filter'];
+$service_filters = isset($_POST['services']) ? $_POST['services'] : [];
 
 // Database connection
 $host="mchre091.duckdns.org:3306";
@@ -24,6 +25,15 @@ if ($conn->connect_error) {
     echo '<li class="facility-item"><p>Error connecting to the database.</p></li>';
     exit;
 }
+
+// Define a whitelist of allowed service columns to prevent SQL injection
+$allowed_service_columns = [
+    'assistance_with_bathing', 'assistance_with_personal_hygiene', 'assistance_with_ambulation',
+    'assistance_with_feeding', 'provision_of_skin_and_wound_care', 'continence_care',
+    'administration_of_drugs_or_another_substance', 'provision_of_a_meal', 'dementia_care_program',
+    'assistance_with_dressing', 'pharmacists_provides_while_engaging_in_the_practice_of_pharmacy',
+    'phy_and_surg_provides_while_engaging_in_the_practice_of_medicine', 'nurses_provides_while_engaging_in_the_practice_of_nursing'
+];
 
 // Base SQL query with Haversine formula for distance calculation
 $sql = "
@@ -39,15 +49,34 @@ SELECT *, (
 FROM rhra_entries_detailed
 WHERE lic_status = ?
 ";
-$sql .= "ORDER BY distance ASC LIMIT ?";
 
-// Database parsing the request "ddd" being a double floating point number
-// It prepares the request (which is defined as the Haversine formula)
-// user lat, user lon and user lat2 will replace the ? in the request
-// then it will execute the sql request (this format is to prevent sql injection)
-// then fetch results
+$params = [$user_lat, $user_lon, $user_lat, $lic_filter];
+$types = 'ddds';
+
+$where_clauses = [];
+foreach ($service_filters as $column => $value) {
+    if (in_array($column, $allowed_service_columns) && in_array($value, ['TRUE', 'FALSE'])) {
+        $where_clauses[] = "`" . $column . "` = ?";
+        $params[] = $value;
+        $types .= 's';
+    }
+}
+
+if (!empty($where_clauses)) {
+    $sql .= " AND " . implode(" AND ", $where_clauses);
+}
+
+$sql .= " ORDER BY distance ASC LIMIT ?";
+
+// Add the LIMIT parameter ($asc_filter) to the params array *after* the SQL string is fully built.
+$params[] = $asc_filter;
+$types .= 'i';
+
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("dddsi", $user_lat, $user_lon, $user_lat, $lic_filter, $asc_filter);
+if ($stmt === false) {
+    die("Prepare failed: " . $conn->error);
+}
+$stmt->bind_param($types, ...$params);
 $stmt->execute();
 $result = $stmt->get_result();
 

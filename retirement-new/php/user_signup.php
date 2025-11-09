@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        echo "Username already exists. Please choose another one.";
+        // Redirect back to signup page with an error
         header("Location: ../signup.php?error=username_exists");
         exit();
     } else {

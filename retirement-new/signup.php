@@ -17,6 +17,11 @@
  <div class="login-body">
     <div class="login-container">
       <h2>Sign-up Form</h2>
+      <?php if (isset($_GET['error']) && $_GET['error'] === 'username_exists'): ?>
+        <div class="error-message">
+            <p>Username already exists</p>
+        </div>
+      <?php endif; ?>
       <form action="php/user_signup.php" method="post">
               <input type="text" id="username" name="username" placeholder="Username" required /><br>
               <input type="password" id="password" name="password" placeholder="Password" required /><br>
@@ -28,4 +33,16 @@
   <!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
 </body>
+
+<script>
+  // You can also use JavaScript to show an alert if you prefer that over an inline message.
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('error') && params.get('error') === 'username_exists') {
+      alert('Username already exists. Please choose a different one.');
+      // Optional: remove the error from the URL without reloading the page
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
+</script>
 </html>

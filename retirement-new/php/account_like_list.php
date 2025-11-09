@@ -4,7 +4,7 @@ function get_liked_facilities($username) {
     
     // We need to create a new connection here because the main 'connection.php' might be used elsewhere.
     $login_host = "mchre091.duckdns.org:3306";
-    $login_username = "mchre091";
+    $login_username = "member";
     $login_password = "admin";
     $login_dbname = "login-details";
 
@@ -35,7 +35,7 @@ function get_liked_facilities($username) {
 
     // --- Step 2: Get facility details from the 'ontario_facility_rhra' database ---
     $facility_host = "mchre091.duckdns.org:3306";
-    $facility_username = "mchre091";
+    $facility_username = "member";
     $facility_password = "admin";
     $facility_dbname = "ontario_facility_rhra";
 
