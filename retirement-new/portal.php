@@ -12,25 +12,36 @@
   </head>
 <body>
 <?php include 'view/header.php'; ?>
-
-<!--  Account Portal -->
- <div class="account-portal-body">
-      <div class="account-portal-settings">
-      <h3>Account Settings</h3>
-      <ul class="settings-list">
-        <li class="settings"><a href="#">Change Password</a></li>
-        <li class="settings"><a href="#">Update Email</a></li>
-        <li class="settings"><a href="#">Privacy Settings</a></li>
-      </ul>
-</div>
-    <div class="account-portal-container">
-      <h2>Welcome to Your Account Portal</h2>
-      <p>This is a placeholder for the account portal content.</p>
-      <form action="php/user_logout.php" method="post">
-        <button type="logout">Log Out</button>
-      </form>
-      </div>
-</div>
+<?php
+  // Redirect to login if user is not logged in
+  if ($loggedin !== true) {
+      header("Location: login.php");
+      exit();
+  }
+?>
+<main>
+  <!--  Account Portal -->
+  <div class="account-portal-container">
+      <aside class="account-portal-sidebar">
+          <div class="sidebar-header">
+              <h3>Options</h3>
+          </div>
+          <nav class="sidebar-nav">
+              <a href="likes.php" class="sidebar-link">My Likes</a>
+          </nav>
+          <div class="sidebar-footer">
+            <form action="php/user_logout.php" method="post">
+                <button type="submit" class="logout-button">Log Out</button>
+            </form>
+          </div>
+      </aside>
+      <section class="account-portal-content">
+          <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User'); ?>!</h2>
+          <p>This is your personal dashboard. From here, you can manage your account settings, view your saved facilities, and update your profile information.</p>
+          <p>Select an option from the sidebar to get started.</p>
+      </section>
+  </div>
+</main>
   <!-- Footer Section -->
 <?php include 'view/footer.php'; ?>
 </body>

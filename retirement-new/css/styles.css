@@ -473,40 +473,63 @@ table {
 /*LOGIN END*/
 
 /* Account Portal */
-.account-portal-body {
-    margin-top: 0.9375rem; /* 15px */
-    display: flex;
-}
-
-.account-portal-settings {
-    justify-content: left;
-    background-color: var(--form-color);
-    border: 0.0625rem solid black; /* 1px */
-    border-radius: 0.625rem; /* 10px */
-    padding: 1.25rem; /* 20px */
-    margin: 1.25rem; /* 20px */
-}
-
 .account-portal-container {
-    text-align: left;
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.625rem; /* 10px */
-    background-color: var(--form-color);
-    border: 0.0625rem solid black; /* 1px */
-    margin: 1.25rem; /* 20px */
-    width: 100%;
-}
-
-ul.settings-list {
-    margin: 10px 0;
     display: flex;
-    text-align: left;
-    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 1rem; /* 16px */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-height: 60vh;
 }
 
-li.settings {
-    margin: 0.3125rem 0; /* 5px */
-    text-align: left;
+.account-portal-sidebar {
+    flex: 0 0 250px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.sidebar-header h3 {
+    margin: 0 0 1.5rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    color: #555;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background-color: #e0f7ff;
+    color: #3aaed8;
+    font-weight: bold;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.logout-button {
+    width: 100%;
+    background-color: #fde8e8;
+    color: #c53030;
+    font-weight: bold;
 }
 /*ACCOUNT PORTAL END*/
 
@@ -550,6 +573,18 @@ li.settings {
     line-height:1.6;
 }
 /*TESTIMONIES*/
+
+/* Account Portal Content Area */
+.account-portal-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+}
+
+.account-portal-content h2 {
+    color: #3aaed8;
+    margin-top: 0;
+}
+
 
 /*MAPBOX*/
 #map { flex-grow: 1; /* Allow map to fill available space */ width: 100%; }

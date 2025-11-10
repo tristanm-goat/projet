@@ -25,11 +25,9 @@
 ?>
 
 <!--  Likes Page -->
+        <h2>Your Liked Retirement Homes</h2>
  <div class="account-portal-body">
     <div class="account-portal-container">
-      <h2>Your Liked Retirement Homes</h2>
-      <p>Here's a list of the facilities you've marked as favorites. Click on any item to view its full details.</p>
-
       <div class="liked-facilities-section">
         <ul class="liked-facility-list">
             <?php if (empty($liked_facilities)): ?>

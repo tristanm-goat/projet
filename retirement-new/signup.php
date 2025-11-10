@@ -26,6 +26,7 @@
               <input type="text" id="username" name="username" placeholder="Username" required /><br>
               <input type="password" id="password" name="password" placeholder="Password" required /><br>
               <button type="submit">Sign Up</button>
+              <button type="signin" onclick="window.location.href='login.php'">Sign In</button>
       </form>
     </div>
 </div>
