@@ -184,6 +184,7 @@ slider.oninput = function() {
         let filterSelection = document.getElementById('filter_lic').value;
         let amountSelection = document.getElementById('filter_asc').value;
 
+        // collects the form data to send over to the find-facilities.php file to process the data
         listContainer.innerHTML = '<li>Loading...</li>';
         const formData = new FormData();
         formData.append('latitude', lat);

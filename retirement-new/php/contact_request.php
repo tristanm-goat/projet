@@ -10,20 +10,12 @@ if (empty($name) || empty($email) || empty($subject) || empty($message) || !filt
     header("Location: ../contact.php?status=error");
     exit;
 }
-
 $time = date('Y-m-d H:i:s');
 
 // Database connection
-$host="mchre091.duckdns.org:3306";
-$username="member";
-$password="admin";
-$dbname = "contact_request"; // Assuming this is the correct database name
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    // In a real app, you would log this error instead of showing it to the user.
-    header("Location: ../contact.php?status=db_error");
-    exit;
-}
+include 'connection_contact.php';
+
+
 
 // With the database table updated (AUTO_INCREMENT), we no longer include `contact_id` in the INSERT statement.
 // The database will automatically generate the unique, incremental ID.
@@ -32,7 +24,7 @@ if ($stmt === false) {
     header("Location: ../contact.php?status=db_error");
     exit;
 }
-
+//preparing values (Will replace ?)
 $stmt->bind_param("sssss", $name, $email, $subject, $message, $time);
 
 if ($stmt->execute()) {

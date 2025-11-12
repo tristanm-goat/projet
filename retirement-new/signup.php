@@ -36,7 +36,7 @@
 </body>
 
 <script>
-  // You can also use JavaScript to show an alert if you prefer that over an inline message.
+  // login error
   document.addEventListener('DOMContentLoaded', (event) => {
     const params = new URLSearchParams(window.location.search);
     if (params.has('error') && params.get('error') === 'username_exists') {

@@ -45,6 +45,9 @@
 </body>
 <!-- Javascript Section -->
 <script>
+
+    //script to get the value from the contact form, if it was successfull or not
+    // when the contact_request.php file enters the data into the sql database, it will return a variable 'status'
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const status = params.get('status');

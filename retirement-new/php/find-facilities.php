@@ -15,16 +15,8 @@ $lic_filter = $_POST['license_filter'];
 $asc_filter = (int)$_POST['asc_filter'];
 $service_filters = isset($_POST['services']) ? $_POST['services'] : [];
 
-// Database connection
-$host="mchre091.duckdns.org:3306";
-$username="member";
-$password="admin";
-$dbname = "ontario_facility_rhra";
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    echo '<li class="facility-item"><p>Error connecting to the database.</p></li>';
-    exit;
-}
+include 'connection_retirement.php';
+
 
 // Define a whitelist of allowed service columns to prevent SQL injection
 $allowed_service_columns = [
@@ -50,9 +42,11 @@ FROM rhra_entries_detailed
 WHERE lic_status = ?
 ";
 
+//filtering values for the formula
 $params = [$user_lat, $user_lon, $user_lat, $lic_filter];
 $types = 'ddds';
 
+//code for certain filter values
 $where_clauses = [];
 foreach ($service_filters as $column => $value) {
     if (in_array($column, $allowed_service_columns) && in_array($value, ['TRUE', 'FALSE'])) {
@@ -65,7 +59,7 @@ foreach ($service_filters as $column => $value) {
 if (!empty($where_clauses)) {
     $sql .= " AND " . implode(" AND ", $where_clauses);
 }
-
+//order the list by closest to farthest distance
 $sql .= " ORDER BY distance ASC LIMIT ?";
 
 // Add the LIMIT parameter ($asc_filter) to the params array *after* the SQL string is fully built.
