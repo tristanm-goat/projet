@@ -6,7 +6,7 @@ function get_liked_facilities($username) {
     $login_host = "mchre091.duckdns.org:3306";
     $login_username = "member";
     $login_password = "admin";
-    $login_dbname = "login-details";
+    $login_dbname = "login_details";
 
     $login_conn = new mysqli($login_host, $login_username, $login_password, $login_dbname);
     if ($login_conn->connect_error) {

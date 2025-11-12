@@ -2,7 +2,7 @@
 $host="mchre091.duckdns.org:3306";
 $username="member";
 $password="admin";
-$dbname="login-details";
+$dbname="login_details";
 
 $conn = new mysqli($host, $username, $password, $dbname);
 if($conn->connect_error)
