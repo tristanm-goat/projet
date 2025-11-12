@@ -16,8 +16,6 @@ $asc_filter = (int)$_POST['asc_filter'];
 $service_filters = isset($_POST['services']) ? $_POST['services'] : [];
 
 include 'connection_retirement.php';
-
-
 // Define a whitelist of allowed service columns to prevent SQL injection
 $allowed_service_columns = [
     'assistance_with_bathing', 'assistance_with_personal_hygiene', 'assistance_with_ambulation',
@@ -66,9 +64,9 @@ $sql .= " ORDER BY distance ASC LIMIT ?";
 $params[] = $asc_filter;
 $types .= 'i';
 
-$stmt = $conn->prepare($sql);
+$stmt = $facility_conn->prepare($sql);
 if ($stmt === false) {
-    die("Prepare failed: " . $conn->error);
+    die("Prepare failed: " . $facility_conn->error);
 }
 $stmt->bind_param($types, ...$params);
 $stmt->execute();
@@ -108,7 +106,7 @@ if ($result->num_rows > 0) {
 }
 
 $stmt->close();
-$conn->close();
+$facility_conn->close();
 
 header('Content-Type: application/json');
 echo json_encode(['html' => $html_output, 'locations' => $locations]);

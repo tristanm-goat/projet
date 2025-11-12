@@ -5,7 +5,7 @@ include 'connection.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $stmt = $conn->prepare("SELECT account_user, account_password FROM account WHERE account_user = ?");
+    $stmt = $login_conn->prepare("SELECT account_user, account_password FROM account WHERE account_user = ?");
     if ($stmt === false) {
         die("Error preparing statement: " . htmlspecialchars($conn->error));
     }

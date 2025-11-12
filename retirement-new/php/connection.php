@@ -1,10 +1,13 @@
 <?php
-$host="mchre091.duckdns.org:3306";
-$username="member";
-$password="admin";
-$dbname="login_details";
+    $login_host = "mchre091.duckdns.org:3306";
+    $login_username = "member";
+    $login_password = "admin";
+    $login_dbname = "login_details";
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if($conn->connect_error)
-    die("Failed to connect DB: " . $conn->connect_error);
+    $login_conn = new mysqli($login_host, $login_username, $login_password, $login_dbname);
+    if ($login_conn->connect_error) {
+        // In a real app, log this error instead of dying
+        error_log("Connection failed: " . $login_conn->connect_error);
+        return [];
+    }
 ?>

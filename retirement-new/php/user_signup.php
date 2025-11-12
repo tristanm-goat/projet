@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // prepare statement to fetch data from sql database to prevent injections
-    $stmt = $conn->prepare("SELECT account_user FROM account WHERE account_user = ?");
+    $stmt = $login_conn->prepare("SELECT account_user FROM account WHERE account_user = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt_insert = $conn->prepare("INSERT INTO account(account_user, account_password) VALUES (?, ?)");
+        $stmt_insert = $login_conn->prepare("INSERT INTO account(account_user, account_password) VALUES (?, ?)");
         if ($stmt_insert === false) {
             die("Error preparing insert statement: " . $conn->error);
         }
@@ -34,6 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_insert->close();
     }
     $stmt->close();
-    $conn->close();
+    $login_conn->close();
 }
 ?>

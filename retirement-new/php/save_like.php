@@ -33,7 +33,7 @@ if (!in_array($option_number, [1, 2, 3])) {
 $update_column = "account_option" . $option_number;
 
 // 1. Prepare the statement to fetch current user options
-$stmt_check = $conn->prepare("SELECT account_option1, account_option2, account_option3 FROM account WHERE account_user = ?");
+$stmt_check = $login_conn->prepare("SELECT account_option1, account_option2, account_option3 FROM account WHERE account_user = ?");
 if ($stmt_check === false) {
     echo json_encode(['status' => 'error', 'message' => 'Database error (prepare check).']);
     exit();
@@ -62,7 +62,7 @@ if (in_array($facility_id, array_values($user_options))) {
 }
 
 // Proceed with the update
-$update_stmt = $conn->prepare("UPDATE account SET $update_column = ? WHERE account_user = ?");
+$update_stmt = $login_conn->prepare("UPDATE account SET $update_column = ? WHERE account_user = ?");
 if ($update_stmt === false) {
     echo json_encode(['status' => 'error', 'message' => 'Database error (prepare update).']);
     exit();
@@ -77,5 +77,5 @@ if ($update_stmt->execute()) {
 }
 
 $update_stmt->close();
-$conn->close();
+$login_conn->close();
 ?>
