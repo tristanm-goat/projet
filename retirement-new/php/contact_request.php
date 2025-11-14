@@ -15,8 +15,6 @@ $time = date('Y-m-d H:i:s');
 // Database connection
 include 'connection_contact.php';
 
-
-
 // With the database table updated (AUTO_INCREMENT), we no longer include `contact_id` in the INSERT statement.
 // The database will automatically generate the unique, incremental ID.
 $stmt = $conn->prepare("INSERT INTO contact_requests (contact_name, contact_email, contact_subject, contact_request, contact_time) VALUES (?, ?, ?, ?, ?)");
