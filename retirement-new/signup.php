@@ -22,11 +22,16 @@
             <p>Username already exists</p>
         </div>
       <?php endif; ?>
-      <form action="php/user_signup.php" method="post">
-              <input type="text" id="username" name="username" placeholder="Username" required /><br>
-              <input type="password" id="password" name="password" placeholder="Password" required /><br>
-              <button type="submit">Sign Up</button>
-              <button type="signin" onclick="window.location.href='login.php'">Sign In</button>
+      <form id="signupForm" method="post" action="php/user_signup.php" novalidate>
+              <label for="username">Username</label>
+              <input id="username" name="username" type="text" required>
+
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" required>
+
+              <div id="signupErrors" aria-live="polite" style="color:#b00020; margin-top:8px;"></div>
+
+              <button type="submit">Create account</button>
       </form>
     </div>
 </div>
@@ -46,4 +51,6 @@
     }
   });
 </script>
+<!-- include validation script -->
+<script src="js/signup_validation.js"></script>
 </html>
