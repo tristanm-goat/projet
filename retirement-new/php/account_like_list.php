@@ -24,7 +24,7 @@ function get_liked_facilities($username) {
     }
 
     // --- Step 2: Get facility details from the 'ontario_facility_rhra' database ---
-    $facility_host = "mchre091.duckdns.org:3306";
+    $facility_host = "localhost:3306";
     $facility_username = "member";
     $facility_password = "admin";
     $facility_dbname = "ontario_facility_rhra";
