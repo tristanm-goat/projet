@@ -1,5 +1,5 @@
 <?php
-    $login_host = "mchre091.duckdns.org:3306";
+    $login_host = "localhost:3306";
     $login_username = "member";
     $login_password = "admin";
     $login_dbname = "login_details";

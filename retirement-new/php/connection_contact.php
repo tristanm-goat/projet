@@ -1,5 +1,5 @@
 <?php
-$host="mchre091.duckdns.org:3306";
+$host="localhost:3306";
 $username="member";
 $password="admin";
 $dbname = "contact_request"; // Assuming this is the correct database name
