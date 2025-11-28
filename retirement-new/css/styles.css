@@ -588,3 +588,23 @@ table {
 
 /*MAPBOX*/
 #map { flex-grow: 1; /* Allow map to fill available space */ width: 100%; }
+
+#dynamic-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100; /* Make sure it appears above other things */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal menu, use column for vertical */
+    gap: 15px;
+}
+#dynamic-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+header {
+  position: relative;
+}

@@ -8,7 +8,9 @@
       <img src="./img/logo-png.png"  alt="LifeMap Logo" class="company-logo" />
       <span class="company-name" >Life</span><span class="company-name2">Map</span>
     </a>
-
+<!-- Dynamic Menu (Left Corner) -->
+  <ul id="dynamic-menu"></ul>
+    <script src="js/menu.js"></script>
 	<!-- Navigation Menu -->
     <div class="header-main-nav">
       <ul>
